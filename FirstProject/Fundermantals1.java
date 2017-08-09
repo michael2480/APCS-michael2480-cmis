@@ -2,7 +2,7 @@
 /**
  * Write a description of class Fundermantals1 here.
  * 
- * @author (your name) 
+ * @author (our name) 
  * @version (a version number or a date)
  */
 public class Fundermantals1
