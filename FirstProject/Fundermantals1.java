@@ -5,6 +5,9 @@
  * @author (our name) 
  * @version (a version number or a date)
  */
+
+import java.util.Random;
+
 public class Fundermantals1
 {
    public static void main (String[] args) {
@@ -26,7 +29,12 @@ public class Fundermantals1
        double valueF = 0.5;
        double valueOfOperations2 = divide2(subtract2(valueA, valueB),valueC);
        System.out.println(valueOfOperations2);
-    
+       
+       // Call the Methods 3        
+       int valueG = 50;
+       int valueH = 43;
+       compare(valueG, valueH);
+       System.out.println(evenOddZero(valueH));    
    }
    
    public static void dataTypes () {
@@ -101,7 +109,58 @@ public class Fundermantals1
    }
    
    public static void compare (int a, int b) {
-    
+       if (a < b) {
+           System.out.println("The value of a is " + a + " and it is less than b whose value is " + b + ".");
+       
+       }
+       else if (a > b) {
+           System.out.println("The value of a is " + a + " and it is greater than b whose value is " + b + ".");
+       }
+       
+       else {
+           System.out.println("The value of a is " + a + " and it is equal to b whose value is " + b + ".");
+       }
+   }
+   
+   public static int evenOddZero (int a) {
+       if (a == 0) {
+           return 0;
+       }
+       else if (a % 2 == 0) {
+           return 1;
+       }
+       else {
+           return -1;
+       }
+   }
+
+   public static void squareTable () {
+       for (int i = 1; i < 11; i++) {
+           int squared = i * i;
+           Random rand = new Random();
+           int randomNumber = rand.nextInt((squared));
+           System.out.println(i + "\t" + (squared) + "\t" + randomNumber +"\n");
+       }
+   }
+   
+   public static int triangle (int a) {
+       int b = 0;
+       for (int i = a; i > 0; i--) {
+           b += i;
+       }
+       return b;
+   }
+   
+   public static int pyramid (int a) {
+       int b = 0;
+       for (int i = a; i > 0; i--) {
+           b += (i*i);
+       }
+       return b;
+   }
+
+   public static void checkerboard (int h, int w) {
+       
    }
    
 }
