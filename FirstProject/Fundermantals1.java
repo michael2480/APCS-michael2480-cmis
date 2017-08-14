@@ -2,10 +2,11 @@
 /**
  * Write a description of class Fundermantals1 here.
  * 
- * @author (our name) 
+ * @author michael blakie 
  * @version (a version number or a date)
  */
 
+// This imports the random library allowing for useage of useful 'random' number generators.
 import java.util.Random;
 
 public class Fundermantals1
@@ -14,7 +15,7 @@ public class Fundermantals1
    
        String helloWorld = "Hello World";
        
-       System.out.println(helloWorld+"!");
+       System.out.println(helloWorld + "!");
        
        // Call the Methods        
        double valueA = 4.6;
@@ -38,30 +39,30 @@ public class Fundermantals1
    }
    
    public static void dataTypes () {
-       
-       // A byte is a type that has a limited numeric range which allows it to be quickly applied in computations. Cannot be decimal.. 
+
        byte byteType = -5;
+       System.out.println("A byte is a type that has a limited numeric range which allows it to be quickly applied in computations and it cannot be decimal.\nUses: Representing Age, Representing a length dimension of small objects, Simple integer math with small numbers.\n" + byteType + "\n");
        
-       // A short has the same purpose as a byte  (save memory) but has a larger range. Cannot be decimal.
        short shortType = 40;
-       
-       // An int is double the size of a short but has an even larger range. Cannot be decimal.
+       System.out.println("A short has the same purpose as a byte  (save memory) but has a larger range.\nUses: Representing Height in cm, Representing the Year (as long as it isn't a high BC value), integer functions that lie between -32,768 and 32768.\n" + shortType + "\n");
+
        int intType = 4;
-       
-       // A long is larger than an int but uses a lot more memory.
+       System.out.println("An int is about double the size of a short but has an even larger range. Cannot be decimal.\nUses: Representing all years, representing distances, integer interacton.\n" + intType + "\n");
+
        long longType = 987654321;
-       
-       // A float stores sub-integer but rather innacurately to save space. Good for floating point numbers. 
+       System.out.println("A long is larger than an int but uses a lot more memory.\nUses: Even larger integer interaction, represent long distances, represent time.\n" + longType + "\n");
+
        float floatType = 5.61f;
+       System.out.println("A float stores sub-integer but rather innacurately to save space. Good for floating point numbers.\nUses: percentages, floating point numbers, decimals.\n" + floatType + "\n");
        
-       // A double is also a bit innacurate but is used for decimal calculations.
        double doubleType = 4.505;
-       
-       // A boolean is used for true/false, or binary situations.
+       System.out.println("A double is also a bit innacurate but is used for decimal calculations.\nUses: division, representation of decimal numbers, very long decimal eg: 56.9999799943\n" + doubleType + "\n");
+
        boolean boolType = true;
+       System.out.println("A boolean is used for true/false, or binary situations.\nUses: On/Off Conditions. Is Equal?, True/False Statements\nTrue\n");       
        
-       // A character is a type that stores only 'one 16-bit unicode character'.
        char charType = 'a';
+       System.out.println("A character is a type that stores only 'one 16-bit unicode character'.\nUses: abbreviation as a character, can be used instead of a 1 length string, many of them can be turned into a string.\n" + charType);
        
    }
    
@@ -82,7 +83,6 @@ public class Fundermantals1
    }
    
    public static int divide (int a, int b) {
-       // possible to do with int albiet dangerous because of remainders
        int c = a/b;
        return c;
    }
@@ -160,7 +160,7 @@ public class Fundermantals1
    }
 
    public static void checkerboard (int h, int w) {
-       
+        
    }
    
 }
