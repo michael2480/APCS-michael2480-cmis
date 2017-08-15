@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Fundermantals1 here.
+ * Write a description of class Fundamentals1 here.
  * 
  * @author michael blakie 
  * @version (a version number or a date)
@@ -9,7 +9,7 @@
 // This imports the random library allowing for useage of useful 'random' number generators.
 import java.util.Random;
 
-public class Fundermantals1
+public class Fundamentals1
 {
    public static void main (String[] args) {
    
@@ -93,7 +93,6 @@ public class Fundermantals1
    }
    
    public static double subtract2 (double a, double b) {
-       // b will be subtracted from a
        double c = a-b;
        return c;
    }
@@ -159,8 +158,11 @@ public class Fundermantals1
        return b;
    }
 
-   public static void checkerboard (int h, int w) {
-        
+   public static String checkerboard (int h, int w) {
+        int height = h;
+        int width = w;
+        String returnValue = "";
+        return returnValue;
    }
    
 }
