@@ -161,7 +161,35 @@ public class Fundamentals1
    public static String checkerboard (int h, int w) {
         int height = h;
         int width = w;
+        String innerBits = "";
         String returnValue = "";
+        
+        for (int i = 1; i < (h-2)*(w-2) ; i++) {
+       
+            if (i == 1 || i == h) {
+                innerBits += "+";
+                for (int a = w; a < w; a++){
+                    innerBits += "-";
+                }
+            }
+            else {
+                
+                if (i % 2 == 0) {
+                        innerBits += " ";
+                    }
+                    
+                    else {
+                        innerBits += "#";
+                    }
+                
+                if (i % (h-2) == 0) {
+                    innerBits += "\n";
+                }
+            }
+        }
+        
+        System.out.println(innerBits);
+        
         return returnValue;
    }
    
