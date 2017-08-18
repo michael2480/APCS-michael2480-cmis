@@ -161,36 +161,52 @@ public class Fundamentals1
    public static String checkerboard (int h, int w) {
         int height = h;
         int width = w;
-        String innerBits = "";
-        String returnValue = "";
+        int gridSize = w*h;
+        boolean isOddPixel = true; //Start at row 1
+        String returnString = "";
         
-        for (int i = 1; i < (h-2)*(w-2) ; i++) {
-       
-            if (i == 1 || i == h) {
-                innerBits += "+";
-                for (int a = w; a < w; a++){
-                    innerBits += "-";
-                }
+        int currentCellRow = 0;
+        int currentCellCol = -1;
+        
+        for (int cellNumber = 0; cellNumber < gridSize; cellNumber ++) {
+            
+            // Will adjust the row variable counter whenever we hit the final column
+            if (currentCellCol == width-1) {
+                currentCellRow += 1;
+                currentCellCol = 0;
+                
             }
             else {
-                
-                if (i % 2 == 0) {
-                        innerBits += " ";
-                    }
-                    
-                    else {
-                        innerBits += "#";
-                    }
-                
-                if (i % (h-2) == 0) {
-                    innerBits += "\n";
+                currentCellCol += 1;
+            }
+            
+            if (currentCellCol == 0 || currentCellCol == width-1) {
+                if (currentCellRow == 0 || currentCellRow == height-1) {
+                    returnString += "+";
+                }
+                else {
+                    returnString += "|";
+                }
+                if (currentCellCol == width -1) {
+                    returnString += "\n";
                 }
             }
+            
+            else if (currentCellRow == 0 || currentCellRow == height-1) {
+                returnString += "-";
+            }
+            
+            // You end up here if the cell is not part of the frame.
+            else {
+                returnString += " ";
+            }
+            
+            System.out.println("("+currentCellCol+","+currentCellRow+") ");
         }
         
-        System.out.println(innerBits);
+        System.out.println(returnString);
         
-        return returnValue;
+        return returnString;
    }
    
 }
