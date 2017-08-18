@@ -159,26 +159,39 @@ public class Fundamentals1
    }
 
    public static String checkerboard (int h, int w) {
-        int height = h;
-        int width = w;
-        int gridSize = w*h;
+        int height = h+2;
+        int width = w+2;
+        int gridSize = width*height;
         String returnString = "";
-        
+        int hashNumber = 0;
         int currentCellRow = 0;
         int currentCellCol = -1;
         
+        int numHashes = 0;
+        
+        if ((width-2) % 2 == 0) {
+            numHashes = ((width-2)/2)*(height-2);
+        }
+        else {
+            if ((height-2) % 2 == 0) {
+                numHashes = ((width-1)/2)*((height-3)/2) + (((width-1)/2)-1)*((height-3)/2);
+            }
+            else {
+                numHashes = ((width-1)/2)*((height-1)/2) + (((width-1)/2)-1)*((height-3)/2);
+            }
+        }
+
+        Random rand = new Random();
+        int  randomInt = rand.nextInt(10);
+        int  randomHashNum = rand.nextInt(numHashes) + 1;
         for (int cellNumber = 0; cellNumber < gridSize; cellNumber ++) {
-            
-            // Will adjust the row variable counter whenever we hit the final column
-            if (currentCellCol == width-1) {
+                        if (currentCellCol == width-1) {
                 currentCellRow += 1;
                 currentCellCol = 0;
-                
             }
             else {
                 currentCellCol += 1;
-            }
-            
+            }            
             if (currentCellCol == 0 || currentCellCol == width-1) {
                 if (currentCellRow == 0 || currentCellRow == height-1) {
                     returnString += "+";
@@ -194,12 +207,16 @@ public class Fundamentals1
             else if (currentCellRow == 0 || currentCellRow == height-1) {
                 returnString += "-";
             }
-            
-            // You end up here if the cell is not part of the frame.
             else {
                 if (currentCellCol % 2 == 1) {
                     if (currentCellRow % 2 == 1) {
-                        returnString += "#";
+                        hashNumber += 1;
+                        if (hashNumber == randomHashNum) { 
+                            returnString += randomInt;
+                        }
+                        else { 
+                            returnString += "#";
+                        }
                     }
                     else {
                         returnString += " ";
@@ -207,15 +224,19 @@ public class Fundamentals1
                 }
                 else {
                     if (currentCellRow % 2 == 1) {
-                    returnString += " ";
+                        returnString += " ";
                     }
                    else {
-                       returnString += "#";
+                       hashNumber += 1;
+                       if (hashNumber == randomHashNum) { 
+                            returnString += randomInt;
+                       }
+                       else { 
+                            returnString += "#";
+                       }
                     }
                 }
             }
-            
-            System.out.println("("+currentCellCol+","+currentCellRow+") ");
         }
         
         System.out.println(returnString);
