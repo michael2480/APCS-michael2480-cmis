@@ -162,7 +162,6 @@ public class Fundamentals1
         int height = h;
         int width = w;
         int gridSize = w*h;
-        boolean isOddPixel = true; //Start at row 1
         String returnString = "";
         
         int currentCellRow = 0;
@@ -198,7 +197,22 @@ public class Fundamentals1
             
             // You end up here if the cell is not part of the frame.
             else {
-                returnString += " ";
+                if (currentCellCol % 2 == 1) {
+                    if (currentCellRow % 2 == 1) {
+                        returnString += "#";
+                    }
+                    else {
+                        returnString += " ";
+                    }
+                }
+                else {
+                    if (currentCellRow % 2 == 1) {
+                    returnString += " ";
+                    }
+                   else {
+                       returnString += "#";
+                    }
+                }
             }
             
             System.out.println("("+currentCellCol+","+currentCellRow+") ");
