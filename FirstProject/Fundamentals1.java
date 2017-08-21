@@ -7,7 +7,8 @@
  */
 
 // This imports the random library allowing for useage of useful 'random' number generators.
-import java.util.Random;
+import java.util.*;
+
 
 public class Fundamentals1
 {
@@ -24,11 +25,15 @@ public class Fundamentals1
        double valueOfOperations = multiply2(add2(valueA, valueB),valueC);
        System.out.println(valueOfOperations);
        
-       // Call the Methods 2        
-       double valueD = 6.4;
-       double valueE = 2.3;
-       double valueF = 0.5;
-       double valueOfOperations2 = divide2(subtract2(valueA, valueB),valueC);
+       // Call the Methods 2
+       Scanner reader = new Scanner(System.in);
+       System.out.println("Enter a number: ");
+       int valueD = reader.nextInt();
+       System.out.println("Enter another number number: ");
+       int valueE = reader.nextInt();
+       System.out.println("Enter a final number: ");
+       int valueF = reader.nextInt();
+       double valueOfOperations2 = divide2(subtract2(valueD, valueE),valueF);
        System.out.println(valueOfOperations2);
        
        // Call the Methods 3        
@@ -138,7 +143,7 @@ public class Fundamentals1
            int squared = i * i;
            Random rand = new Random();
            int randomNumber = rand.nextInt((squared));
-           System.out.println(i + "\t" + (squared) + "\t" + randomNumber +"\n");
+           System.out.println(i + "\t" + (squared) + "\t" + randomNumber);
        }
    }
    
