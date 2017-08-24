@@ -140,10 +140,15 @@ public class Fundamentals1
 
    public static void squareTable () {
        for (int i = 1; i < 11; i++) {
-           int squared = i * i;
+           int squared = (i*i);
            Random rand = new Random();
-           int randomNumber = rand.nextInt((squared));
-           System.out.println(i + "\t" + (squared) + "\t" + randomNumber);
+           int test;
+           if (squared > 1) { 
+           test = squared-i;
+        }
+        else {test = squared;}
+           int randomNumber = (rand.nextInt(test))+(i);
+           System.out.println(i + "\t" + (squared) + "\t" + (randomNumber));
        }
    }
    
