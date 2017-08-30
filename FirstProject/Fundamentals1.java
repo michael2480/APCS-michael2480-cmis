@@ -22,7 +22,7 @@ public class Fundamentals1
        double valueA = 4.6;
        double valueB = 3.2;
        double valueC = 5.0;
-       double valueOfOperations = multiply2(add2(valueA, valueB),valueC);
+       double valueOfOperations = multiply(add(valueA, valueB),valueC);
        System.out.println(valueOfOperations);
        
        // Call the Methods 2
@@ -33,7 +33,7 @@ public class Fundamentals1
        int valueE = reader.nextInt();
        System.out.println("Enter a final number: ");
        int valueF = reader.nextInt();
-       double valueOfOperations2 = divide2(subtract2(valueD, valueE),valueF);
+       double valueOfOperations2 = divide(subtract(valueD, valueE),valueF);
        System.out.println(valueOfOperations2);
        
        // Call the Methods 3        
@@ -92,22 +92,22 @@ public class Fundamentals1
        return c;
    }
    
-   public static double add2 (double a, double b) {
+   public static double add (double a, double b) {
        double c = a+b;
        return c;
    }
    
-   public static double subtract2 (double a, double b) {
+   public static double subtract (double a, double b) {
        double c = a-b;
        return c;
    }
    
-   public static double multiply2 (double a, double b) {
+   public static double multiply (double a, double b) {
        double c = a*b;
        return c;
    }
    
-   public static double divide2 (double a, double b) {
+   public static double divide (double a, double b) {
        double c = a/b;
        return c;
    }
