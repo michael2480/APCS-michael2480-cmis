@@ -1,4 +1,8 @@
 #BlueJ class context
-comment0.params=topNumber
-comment0.target=int\ problem1(int)
-numComments=1
+comment0.params=
+comment0.target=int\ problem1()
+comment1.params=
+comment1.target=int\ problem2()
+comment2.params=
+comment2.target=int\ problem3()
+numComments=3
