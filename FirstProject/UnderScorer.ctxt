@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=a
+comment1.target=java.lang.String\ underScore(int)
+comment1.text=\n\ A)\ Write\ a\ method\ called\ underScore\n\ \n\ The\ method\ should\ return\ values\ as\ follows\:\n\ +\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=+\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=+\n\ |\ \ Method\ Call\ \ |\ \ return\ value\ \ |\n\ +\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=+\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=+\n\ |\ underScore(0)\ |\ "0"\ \ \ \ \ \ \ \ \ \ \ \ |\n\ |\ underScore(1)\ |\ "1_"\ \ \ \ \ \ \ \ \ \ \ |\n\ |\ underScore(2)\ |\ "2_0"\ \ \ \ \ \ \ \ \ \ |\n\ |\ underScore(3)\ |\ "3_1_"\ \ \ \ \ \ \ \ \ |\n\ |\ underScore(4)\ |\ "4_2_0"\ \ \ \ \ \ \ \ |\n\ |\ underScore(5)\ |\ "5_3_1_"\ \ \ \ \ \ \ |\n\ |\ underScore(6)\ |\ "6_4_2_0"\ \ \ \ \ \ |\n\ |\ underScore(7)\ |\ "7_5_3_1_"\ \ \ \ \ |\n\ |\ underScore(8)\ |\ "8_6_4_2_0"\ \ \ \ |\n\ |\ underScore(9)\ |\ "9_7_5_3_1_"\ \ \ |\n\ +---------------+----------------+\n\ \n\ B)\ Call\ underScore\ from\ the\ main\ method\ and\ print\ out\ the\ results\n\ \ \ \ for\ all\ values\ from\ 0\ to\ 100.\n
+numComments=2
