@@ -1,20 +1,18 @@
 import java.util.Random;
 public class Fundamentals2
 {
-    public static void main (String[] args) {
-    
+    public static int[] main (String[] args) {
+
         //#1
         int[] intArray = {1, 3, 2, 4, 5};
+        int[] intArray2 = {14, 53};
         double[] doubleArray = {1.4, 5.3, 2.2, 64.0, 0.5};
         String[] stringArray = {"One", "Three", "Two", "Four","Five"};
-        System.out.println(intArray[0]);
-        System.out.println(doubleArray[2]);
-        System.out.println(stringArray[4]);
         
-        
+        return merge(intArray, intArray2);
         
     }
-    
+
     //#2
     public static void printArray(int[] array, boolean skip) {    
         for (int index = 0; index < array.length; index++) {        
@@ -28,6 +26,7 @@ public class Fundamentals2
             }   
         }         
     }    
+
     public static void printArray(double[] array, boolean skip) {
         for (int index = 0; index < array.length; index++) {        
             if (skip) {
@@ -40,6 +39,7 @@ public class Fundamentals2
             }   
         }
     }    
+
     public static void printArray(String[] array, boolean skip) {
         for (int index = 0; index < array.length; index++) {        
             if (skip) {
@@ -52,21 +52,24 @@ public class Fundamentals2
             }   
         }
     }
-    
+
     //#3
     public static int lastItem(int[] array) {    
         return (array[(array.length-1)]);        
     }
+
     public static double lastItem(double[] array) {    
         return (array[(array.length-1)]);        
     }
+
     public static String lastItem(String[] array) {    
         return (array[(array.length-1)]);        
     }
+
     public static boolean lastItem(boolean[] array) {    
         return (array[(array.length-1)]);        
     }
-    
+
     //#4
     public static int middleItem(int[] array) {    
         if (array.length%2==0) {
@@ -74,25 +77,28 @@ public class Fundamentals2
         }
         return (array[((array.length+1)/2)]);        
     }
+
     public static double middleItem(double[] array) {    
         if (array.length%2==0) {
             return (array[(array.length/2)]);
         }
         return (array[((array.length+1)/2)]);        
     }
+
     public static String middleItem(String[] array) {    
         if (array.length%2==0) {
             return (array[(array.length/2)]);
         }
         return (array[((array.length+1)/2)]);        
     }
+
     public static boolean middleItem(boolean[] array) {    
         if (array.length%2==0) {
             return (array[(array.length/2)]);
         }
         return (array[((array.length+1)/2)]);         
     }
-    
+
     //#5
     public static int[] randomInts(int n, int min, int max) {
         Random rand = new Random();
@@ -103,7 +109,7 @@ public class Fundamentals2
         }
         return returnArray;
     }
-    
+
     //#6
     public static double[] randomDoubles (int n, double min, double max) {
         Random rand = new Random();
@@ -115,7 +121,7 @@ public class Fundamentals2
         }
         return returnArray;
     }
-    
+
     //#7
     public static int[] copy (int[] inputArray) {
         int[] returnArray = new int[inputArray.length];        
@@ -124,6 +130,7 @@ public class Fundamentals2
         }        
         return returnArray;
     }
+
     public static double[] copy (double[] inputArray) {
         double[] returnArray = new double[inputArray.length];        
         for (int i = 0; i != inputArray.length; i ++) {
@@ -131,6 +138,7 @@ public class Fundamentals2
         }        
         return returnArray;
     }
+
     public static String[] copy (String[] inputArray) {
         String[] returnArray = new String[inputArray.length];        
         for (int i = 0; i != inputArray.length; i ++) {
@@ -138,6 +146,7 @@ public class Fundamentals2
         }        
         return returnArray;
     }
+
     public static boolean[] copy (boolean[] inputArray) {
         boolean[] returnArray = new boolean[inputArray.length];        
         for (int i = 0; i != inputArray.length; i ++) {
@@ -145,7 +154,7 @@ public class Fundamentals2
         }        
         return returnArray;
     }
-    
+
     //#8
     public static int[] pairs (int n) {
         int[] returnArray = new int[(n*2-1)];
@@ -159,7 +168,7 @@ public class Fundamentals2
         }
         return returnArray;
     }
-    
+
     //#9
     public static int[] concat(int[] a, int[] b) {
         int[] c = new int[a.length+b.length];
@@ -171,12 +180,38 @@ public class Fundamentals2
         }
         return c;
     }
-    
+
     //#10
     public static int[] merge (int[] a, int[] b) {
-        return a;
+        int[] returnArray = new int[a.length+b.length];
+        int lesserLen = 0;
+        boolean isALonger = false;
+        if (a.length > b.length) {
+            lesserLen = b.length;
+            isALonger = true;
+        }
+        else {
+            lesserLen = a.length;
+        }
+        int i2 = 0;
+        for (int i = 0; i <= lesserLen; i+=2) {
+            returnArray[i] = a[i2];
+            returnArray[i+1] = b[i2];
+            i2 += 1;
+        }        
+        if (isALonger) {        
+            for (int i3 = lesserLen; i3 < a.length; i3++) {
+                returnArray[i3+lesserLen] = a[i3]; 
+            }            
+        }
+        else {
+            for (int i4 = lesserLen; i4 < b.length; i4++) {
+                returnArray[i4+lesserLen] = b[i4]; 
+            }  
+        }        
+        return returnArray;
     }
-    
+
     //#11
     public static void reverse (int[] array) {
         int[] arrayReversed = new int[array.length];
@@ -184,7 +219,7 @@ public class Fundamentals2
             arrayReversed[i] = array[i];
         }
     }
-    
+
     //#12
     public static int[] subArray (int[] array, int start, int  stop) {
         int[] returnArray = new int[start-stop+1];
@@ -193,29 +228,29 @@ public class Fundamentals2
         }
         return returnArray;
     }
-    
+
     //#13
     public static int[] compareArrays(int[] a, int[] b) {
         int aTotal = 0;
         int bTotal = 0;
-        
+
         for (int i = 0; i != a.length; i++) {
             aTotal += a[i];
         }
         for (int i = 0; i != b.length; i++) {
             bTotal += b[i];
         }
-        
+
         if (aTotal > bTotal) {
             return a;
         }
-        
+
         else {
             return b;
         }
-        
+
     }
-    
+
     //#14
     public static int[] minimize(int[] array, int threshhold) {
         int[] modifiedArray = array;
@@ -226,8 +261,18 @@ public class Fundamentals2
         }
         return modifiedArray;
     }
-    
+
     //#15
+    public static void maximize(int[] array, int threshhold) {
+        int[] modifiedArray = array;
+        for (int i=0; i < array.length; i++) {
+            if (array[i] > threshhold) {
+                modifiedArray[i] = threshhold;
+            }
+        }
+    }
+    
+    //#16
     public static double[] maxMerge (double[] a, double[] b) {
         int lesserLen = 0;
         boolean isALonger = false;
@@ -239,7 +284,7 @@ public class Fundamentals2
             lesserLen = b.length;
         }
         double[] returnArray = new double[(lesserLen+Math.abs(a.length-b.length))];
-        
+
         for (int i = 0; i < lesserLen; i++) {
             if (a[i] < b[i]) {
                 returnArray[i] = a[i];
@@ -257,6 +302,5 @@ public class Fundamentals2
             }
         }
         return returnArray;
-        }
-    } 
-}
+    }
+} 
