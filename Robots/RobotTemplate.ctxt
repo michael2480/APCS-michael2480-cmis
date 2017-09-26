@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=RobotTemplate
+comment1.params=
+comment1.target=RobotTemplate()
+comment2.params=
+comment2.target=void\ init()
+comment3.params=
+comment3.target=void\ behave()
+comment3.text=\n\ What\ your\ robot\ can\ do\:\n\ right()\ \=>\ move\ 1\ to\ the\ right\n\ left()\ \=>\ move\ 1\ to\ the\ left\n\ up()\ \=>\ move\ 1\ up\n\ down()\ \=>\ move\ 1\ down\n\ isClearRight()\ \=>\ true\ means\ no\ block\ to\ the\ right\n\ isClearRight()\ \=>\ true\ means\ no\ block\ to\ the\ left\n\ isClearUp()\ \=>\ true\ means\ no\ block\ up\n\ isClearDown()\ \=>\ true\ means\ no\ block\ down\n
+numComments=4
