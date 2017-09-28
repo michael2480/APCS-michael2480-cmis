@@ -9,65 +9,68 @@ public class Michael extends Robot
     }
 
     public void init(){
-
     }
 
+    int movesPerformed = 0;
+    Random rand = new Random();
+    int isBacking = 0;
+    int stuck = 0;
+    double randomChoice = 0.0;
+    int panicMode = 0;
+
     public void behave () {
-        int movesPerformed = 0;
-        Random rand = new Random();
-        int isBacking = 0;
-        int stuck = 0;
-        double randomChoice = 0.0;
-        int panicMode = 0; // steps  of craziness from 50
-        while (movesPerformed < 5000) {
-            
-            System.out.println("move");
-            
-            if (panicMode > 0) {
-                randomChoice = rand.nextFloat();
-                if (randomChoice < 0.25) {
-                    left();
-                }
-                else if (randomChoice < 0.5) {
-                    up();
-                }
-                else if (randomChoice < 0.75) {
-                    down();
-                }
-                else {
-                    right();
-                }
-                System.out.println("im in panic mode. panics left: "+panicMode);
-                panicMode = panicMode - 1;
-            }
-            
-            else if (isClearRight()) {
-                right();
+        if (panicMode > 0 || stuck == 15) {
+            if (stuck == 15) {
                 stuck = 0;
+                panicMode = 50;
             }
-            else if (!isClearDown() && isClearUp()) {
+            stuck = 0;
+            randomChoice = rand.nextFloat();
+            if (randomChoice < 0.25) {
+                left();
+            }
+            else if (randomChoice < 0.5) {
                 up();
             }
-
-            else if (isClearDown() && !isClearUp()) {
+            else if (randomChoice < 0.75) {
                 down();
             }
-            
-            else if (stuck == 8 || (!isClearDown() && !isClearUp())) {
-                stuck = 0;
-                panicMode += 50;
-            }
-            
             else {
-                panicMode += 50;
-                System.out.println("panic!!!");
+                right();
             }
-            
-            stuck += 1;
-            
-            movesPerformed = movesPerformed + 1;
+
+            panicMode -= 1;
+        }
+
+        else if (isClearRight()) {
+            right();
+            stuck = 0;
 
         }
+        else if (!isClearDown() && isClearUp()) {
+            up();
+
+        }
+
+        else if (isClearDown() && !isClearUp()) {
+            down();
+        }
+
+        else {
+            
+            if (rand.nextFloat() < 0.5) {
+                up();
+            } 
+            else {
+                down();
+            }
+
+        }
+
+        stuck += 1;
+        
+        System.out.println("Stuck: "+stuck+" | panicMode: "+panicMode);
+
     }
 }
 

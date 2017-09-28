@@ -15,7 +15,7 @@ public class MyWorld extends World
         removeObjects(getObjects(null));
         showText("", getWidth()/2,getHeight()/2);
         initLevel1();
-        addBlocks(0.13);
+        addBlocks(0.15);
     }
 
     public void initBoard(){

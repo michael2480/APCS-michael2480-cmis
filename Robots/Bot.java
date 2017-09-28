@@ -5,11 +5,11 @@ public class Bot extends Robot
     public Bot(){
         super(Color.red);
     }
-    
+
     public void init(){
-        
+
     }
-    
+
     /**
      * What your robot can do:
      * right() => move 1 to the right
@@ -22,33 +22,21 @@ public class Bot extends Robot
      * isClearDown() => true means no block down
      */
     public void behave(){
-    int movesPerformed = 0;
-        boolean isBacking = false;
-        boolean upTime = false;
-        while (movesPerformed < 15000) {
-            
-            if (isBacking) {
-                left();
-            }
-            
-            if (isClearRight()) {
-                right();
-            }
-            
-            else if (isClearDown()) {
-                down();
-            }
-            
-            else if (isClearUp()) {
-                up();
-            }
-            
-            else {
-                isBacking = true;
-                left();
-            }
-            
-            movesPerformed += 1;
+
+        if (isClearRight()) {
+            right();
+        }
+
+        else if (isClearDown()) {
+            down();
+        }
+
+        else if (isClearUp()) {
+            up();
+        }
+
+        else {
+            left();
         }
     }
 }
