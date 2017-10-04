@@ -5,7 +5,7 @@ import java.util.Random;
 public class MichaelHorizontal extends Robot
 {
     public MichaelHorizontal(){
-        super(Color.green);
+        super(Color.black);
     }
 
     public void init(){
@@ -30,7 +30,13 @@ public class MichaelHorizontal extends Robot
         Random rand = new Random();
         double randy = rand.nextFloat();
         boolean isEven = getY()%2 == 0;
-        if (isEven) {
+        if (!isClearDown() && (!isClearLeft() || !isClearRight()) ) {
+            up();
+        }
+        else if (!isClearUp() && (!isClearLeft() || !isClearRight()) ) {
+            down();
+        }
+        else if (isEven) {
             if (isClearRight()) {
                 right();
             }

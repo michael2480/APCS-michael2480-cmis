@@ -5,7 +5,7 @@ import java.util.Random;
 public class MichaelVertical extends Robot
 {
     public MichaelVertical(){
-        super(Color.red);
+        super(Color.black);
     }
 
     public void init(){
@@ -29,7 +29,35 @@ public class MichaelVertical extends Robot
     public void behave(){
         Random rand = new Random();
         boolean isEven = getX()%2 == 0;
-        if (isEven) {
+        if (!isClearDown() && (!isClearLeft() || !isClearRight()) ) {
+            if (rand.nextFloat() < 0.25) {
+                right();
+            }
+            else if (rand.nextFloat() < 0.5){
+                left();
+            }
+            else if (rand.nextFloat() < 0.75){
+                up();
+            }
+            else {
+                down();
+            }
+        }
+        else if (!isClearUp() && (!isClearLeft() || !isClearRight()) ) {
+            if (rand.nextFloat() < 0.25) {
+                right();
+            }
+            else if (rand.nextFloat() < 0.5){
+                left();
+            }
+            else if (rand.nextFloat() < 0.75){
+                up();
+            }
+            else {
+                down();
+            }
+        }
+        else if (isEven) {
             if (!isClearDown()) {
                 right();
             }

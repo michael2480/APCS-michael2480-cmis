@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=MichaelSmartRobot
+comment1.params=
+comment1.target=MichaelSmartRobot()
+comment2.params=
+comment2.target=void\ init()
+comment3.params=x\ y
+comment3.target=int\ getCellNumber(int,\ int)
+comment4.params=randomNum\ chanceCorrect
+comment4.target=void\ moveLeft(double,\ double)
+comment5.params=randomNum\ chanceCorrect
+comment5.target=void\ moveRight(double,\ double)
+comment6.params=randomNum\ chanceCorrect
+comment6.target=void\ moveUp(double,\ double)
+comment7.params=randomNum\ chanceCorrect
+comment7.target=void\ moveDown(double,\ double)
+comment8.params=
+comment8.target=void\ behave()
+numComments=9

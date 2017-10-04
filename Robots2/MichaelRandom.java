@@ -5,7 +5,7 @@ import java.util.Random;
 public class MichaelRandom extends Robot
 {
     public MichaelRandom(){
-        super(Color.black);
+        super(Color.blue);
     }
 
     public void init(){
@@ -30,22 +30,55 @@ public class MichaelRandom extends Robot
         Random rand = new Random();
         double rand2 = rand.nextFloat();
         double rand3 = rand.nextFloat();
-        if (rand2 < 0.2) {
+        if (getY() < 8) {
+            if (rand3 < 0.11) {
+                up();
+            }
+            else if (rand3 < 0.44) {
+                down();
+            }
+            else if (rand3 < 74) {
+                right();
+            }
+
+            else {
+                left();
+            }
+        }
+        else if (getY() > 32) {
+            if (rand3 < 0.11) {
+                down();
+            }
+            else if (rand3 < 0.44) {
+                up();
+            }
+            else if (rand3 < 74) {
+                right();
+            }
+
+            else {
+                left();
+            }
+        }
+
+        else if (rand2 < 0.15) {
             up();
         }
-        else if (rand2 < 0.4) {
+
+        else if (rand2 < 0.3) {
             down();
         }
+
         else {
             if (getX() < 20) {
-                if (rand3 < 0.503) {
+                if (rand3 < 0.6) {
                     right();
                 }
                 else {
                     left();
                 }
             }
-            else if (getY() > 140) {
+            else if (getX() > 140) {
                 if (rand3 < 0.503) {
                     right();
                 }
