@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=arr1\ arr2
+comment1.target=int[]\ munge(int[],\ int[])
+comment1.text=\n\ Write\ a\ method\ that\ takes\ 2\ integer\ arrays\ as\ arguments.\n\ It\ should\ return\ the\ the\ array\ for\ which\ the\ sum\ of\ the\ first,\ last,\ and\ middle\ values\ is\ the\ greatest.\n\ If\ the\ sum\ is\ equal,\ it\ should\ return\ an\ array\ that\ contains\ the\ sum\ of\ the\ first\ values,\ \n\ the\ sum\ of\ the\ middle\ values,\ and\ the\ sum\ of\ the\ last\ values.\n
+numComments=2
