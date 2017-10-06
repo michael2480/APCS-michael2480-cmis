@@ -215,14 +215,14 @@ public class Fundamentals2
     //#11
     public static void reverse (int[] array) {
         int[] arrayReversed = new int[array.length];
-        for (int i = (array.length-1); i != 0; i--) {
+        for (int i = (array.length-1); i >= 0; i--) {
             arrayReversed[i] = array[i];
         }
     }
 
     //#12
     public static int[] subArray (int[] array, int start, int  stop) {
-        int[] returnArray = new int[start-stop+1];
+        int[] returnArray = new int[stop-start+1];
         for (int i = start; i != stop; i++) {
             returnArray[i-start] = array[i];
         }
