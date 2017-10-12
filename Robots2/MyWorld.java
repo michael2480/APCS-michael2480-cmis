@@ -2,11 +2,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.lang.reflect.*;
 public class MyWorld extends World
 {
-    Class[] robotClasses = new Class[]{MichaelRandom.class, MichaelVertical.class, MichaelHorizontal.class, Peter2Killbot.class, MichaelSmartRobot.class};
+    Class[] robotClasses = new Class[]{Tracker.class};
     public MyWorld() throws NoSuchMethodException
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(160, 40, 5); 
+        super(Greenfoot.getRandomNumber(50)+50, Greenfoot.getRandomNumber(50)+50, 5); 
         setPaintOrder(Robot.class, Goal.class, Barrier.class);
         init();
     }
@@ -14,13 +13,13 @@ public class MyWorld extends World
     public void init(){
         removeObjects(getObjects(null));
         showText("", getWidth()/2,getHeight()/2);
-        initLevel2();
-        addBlocks(0.000);
+        initBoard();
+        initLevel3();
     }
 
     public void initBoard(){
         addBorder();
-        addRobots();
+        addRobots(true);
     }
 
     public void finishRound(Robot winner){
@@ -34,6 +33,7 @@ public class MyWorld extends World
         initBoard();
         addEndZone();
     }
+
     public void initLevel2(){
         initBoard();
         for(int i = 0; i < 1; i++){
@@ -43,7 +43,19 @@ public class MyWorld extends World
             addObject(new Goal(), x, y);
         }
     }
-    public void addRobots(){   
+
+    public void initLevel3(){
+        int roomD = 10;
+        int r1x = 5 + Greenfoot.getRandomNumber(getWidth() - 20);
+        int r1y = 5 + Greenfoot.getRandomNumber(getHeight() - 20);
+        addRoom(r1x, r1y, roomD, roomD);
+        int gx = r1x + 1 + Greenfoot.getRandomNumber(roomD - 1);
+        int gy = r1y + 1 + Greenfoot.getRandomNumber(roomD - 1);
+        addGoal(gx, gy, 1, 1);
+
+    }
+
+    public void addRobots(boolean scatter){   
         int added = 0;
         Class[] robots = robotClasses.clone();
         while(added < robots.length){
@@ -56,7 +68,8 @@ public class MyWorld extends World
 
             robots[idx] = null;
             try{
-                addObject((Robot)cls.newInstance(),  1, (Greenfoot.getRandomNumber(getHeight() - 4)+2));
+                int x = scatter ? ( Math.random() > 0.5 ? 1 : getWidth() - 2 ) : 1;
+                addObject((Robot)cls.newInstance(),  x, (Greenfoot.getRandomNumber(getHeight() - 4)+2));
 
                 added++;
             }catch(Exception e){
@@ -126,4 +139,31 @@ public class MyWorld extends World
         addVGapWall(x, gap, gap + 1);
     }
 
+    public void addRoom(int x, int y, int w, int h){
+        for(int bx = x; bx <= x+w; bx++){
+            for(int by = y; by <= y+h; by++){
+                if((bx == x || bx == x + w) ||(by == y || by == y + h)){
+                    addObject(new Barrier(), bx, by);
+                }
+
+            }
+        }
+        int side = Greenfoot.getRandomNumber(4);
+        switch(side){
+            case 0:
+            removeObjects(getObjectsAt(x+(w/2), y, Barrier.class));
+            break;
+            case 1:
+            removeObjects(getObjectsAt(x+(w/2), y+h, Barrier.class));
+            break;
+            case 2:
+            removeObjects(getObjectsAt(x, y+(h/2), Barrier.class));
+            break;
+            case 3:
+            removeObjects(getObjectsAt(x+w, y+(h/2), Barrier.class));
+            break;
+
+        }
+
+    }
 }
