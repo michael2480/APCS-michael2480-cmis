@@ -5,17 +5,17 @@ public class Fundamentals3
         //#1
         int[][] fiveByFive = new int[5][5];    
         int[][] fiveByFive2 = {{1,2,3,4,5},
-                               {6,7,8,9,10},
-                               {11,12,13,14,15},
-                               {16,17,18,19,20},
-                               {21,22,23,24,25}};
-                               
+                {6,7,8,9,10},
+                {11,12,13,14,15},
+                {16,17,18,19,20},
+                {21,22,23,24,25}};
+
         double[][] fiveByFive3 = new double[5][5];    
         double[][] fiveByFive4 = {{0.0,0.0,0.0,0.0,0.0},
-                                  {0.0,0.0,0.0,0.0,0.0},
-                                  {0.0,0.0,0.0,0.0,0.0},
-                                  {0.0,0.0,0.0,0.0,0.0},
-                                  {0.0,0.0,0.0,0.0,0.0}};
+                {0.0,0.0,0.0,0.0,0.0},
+                {0.0,0.0,0.0,0.0,0.0},
+                {0.0,0.0,0.0,0.0,0.0},
+                {0.0,0.0,0.0,0.0,0.0}};
 
         snakePrint(fiveByFive2); // test not part of submitting work
 
@@ -154,8 +154,29 @@ public class Fundamentals3
         }
 
         Random rand = new Random();
-            
-        return arr;
+
+        int rand2 = rand.nextInt(numHashes);
         
+        int randNum = rand.nextInt(9);
+
+        int hashNumber = 0;
+
+        if (numHashes != 0) {
+            for (int r = 0; r < arr.length; r ++) {
+                for (int c = 0; c < arr[0].length; c++) {
+                    if (arr[r][c].equals("#")){
+                        if (numHashes == hashNumber) {
+                            arr[r][c] = "" + randNum;
+                        }
+                        numHashes += 1;
+                    }
+                }
+            }
+        }
+        
+        
+        
+        return arr;
+
     }
 }
