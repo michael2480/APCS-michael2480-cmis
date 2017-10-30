@@ -81,6 +81,7 @@ public class MichaelSmartRobot extends Robot
     }
 
     public void behave(){
+        
         Random rand = new Random();
 
         double rng = rand.nextFloat();

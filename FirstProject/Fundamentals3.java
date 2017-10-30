@@ -19,7 +19,7 @@ public class Fundamentals3
                 {4.0,7.0,0.6,3.0,4.0},
                 {5.0,6.0,0.5,4.0,5.0}};
 
-        print2DArray(shift(fiveByFive4, 2), true); // test not part of submitting work
+        print2DArray(rotate(fiveByFive4), true); // test not part of submitting work
 
         //#2
         String[][] checkerboard = {{" ","#"," ","#"," "},{"#"," ","#"," ","#"},{" ","#"," ","#"," "},{"#"," ","#"," ","#"},{" ","#"," ","#"," "}};    
@@ -231,6 +231,7 @@ public class Fundamentals3
         return returnArr;
     }
     
+    //#11
     public static boolean[][] analyze(double[][] array, double threshold) {
         boolean[][] returnArr = new boolean[array.length][array[0].length];
         for (int r = 0; r < array.length; r++) {
