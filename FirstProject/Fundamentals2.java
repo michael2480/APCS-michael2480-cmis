@@ -127,7 +127,7 @@ public class Fundamentals2
         int[] returnArray = new int[inputArray.length];        
         for (int i = 0; i != inputArray.length; i ++) {
             returnArray[i] = inputArray[i];
-        }        
+        }     
         return returnArray;
     }
 

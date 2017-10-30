@@ -4,20 +4,22 @@ public class Fundamentals3
     public static void main(String[] args) {
         //#1
         int[][] fiveByFive = new int[5][5];    
-        int[][] fiveByFive2 = {{1,2,3,4,5},
+        int[][] fiveByFive2 =
+                {{1,2,3,4,5},
                 {6,7,8,9,10},
                 {11,12,13,14,15},
                 {16,17,18,19,20},
                 {21,22,23,24,25}};
 
         double[][] fiveByFive3 = new double[5][5];    
-        double[][] fiveByFive4 = {{0.0,0.0,0.0,0.0,0.0},
-                {0.0,0.0,0.0,0.0,0.0},
-                {0.0,0.0,0.0,0.0,0.0},
-                {0.0,0.0,0.0,0.0,0.0},
-                {0.0,0.0,0.0,0.0,0.0}};
+        double[][] fiveByFive4 =
+                {{1.0,10.0,9.0,0.1,0.0},
+                {2.0,9.0,0.8,1.0,2.0},
+                {3.0,8.0,0.7,2.0,3.0},
+                {4.0,7.0,0.6,3.0,4.0},
+                {5.0,6.0,0.5,4.0,5.0}};
 
-        snakePrint(fiveByFive2); // test not part of submitting work
+        print2DArray(shift(fiveByFive4, 2), true); // test not part of submitting work
 
         //#2
         String[][] checkerboard = {{" ","#"," ","#"," "},{"#"," ","#"," ","#"},{" ","#"," ","#"," "},{"#"," ","#"," ","#"},{" ","#"," ","#"," "}};    
@@ -156,8 +158,8 @@ public class Fundamentals3
         Random rand = new Random();
 
         int rand2 = rand.nextInt(numHashes);
-        
-        int randNum = rand.nextInt(9);
+
+        int randNum = rand.nextInt(9)+1;
 
         int hashNumber = 0;
 
@@ -168,15 +170,80 @@ public class Fundamentals3
                         if (numHashes == hashNumber) {
                             arr[r][c] = "" + randNum;
                         }
-                        numHashes += 1;
+                        hashNumber += 1;
                     }
+                }
+            }
+        }        
+        
+        return arr;
+    }
+    
+    //#8
+    public static int[][] replace(int[][] array, int threshold, int newValue) {
+        int[][] returnArray = new int[array.length][array[0].length];
+        for (int r = 0; r < array.length; r++) {
+            for (int c = 0; c < array[0].length; c ++) {
+                if (array[r][c] > threshold) {
+                    returnArray[r][c] = newValue;
+                }
+                else {
+                    returnArray[r][c] = array[r][c];
+                }
+            }
+        }
+        return returnArray;
+    }
+    
+    //#9
+    public static double[][] shift(double[][] arr, int shiftRow) {
+        Random rand = new Random();
+        double[][] returnArr = new double[arr.length][arr[0].length];
+        for (int r = 0; r < arr.length; r++) {
+            if (r < shiftRow) {
+                for (int c = 0; c < arr[r].length; c++) {
+                    returnArr[r][c] = arr[r][c];
+                }
+            }
+            else if (r == shiftRow) {
+                for (int c = 0; c < arr[r].length; c++) {
+                    returnArr[r][c] = rand.nextDouble()*10 + 1;
+                }
+            }
+            else {
+                for (int c = 0; c < arr[r].length; c++) {
+                    returnArr[r][c] = arr[r-1][c];
                 }
             }
         }
         
-        
-        
-        return arr;
-
+        return returnArr;
     }
+    
+    //#10
+    public static double[][] rotate(double[][] arr) {
+        double[][] returnArr = new double[arr[0].length][arr.length];
+        for (int r = 0; r < arr.length; r++) {
+            for (int c = 0; c < arr[0].length; c++) {
+                returnArr[c][r] = arr[r][c];
+            }
+        }
+        return returnArr;
+    }
+    
+    public static boolean[][] analyze(double[][] array, double threshold) {
+        boolean[][] returnArr = new boolean[array.length][array[0].length];
+        for (int r = 0; r < array.length; r++) {
+            for (int c = 0; c < array[0].length; c++) {
+                if (array[r][c] > threshold) {
+                    returnArr[r][c] = true;
+                }
+                else {
+                returnArr[r][c] = false;
+                }
+            }
+        }
+        return returnArr;
+    }
+    
 }
