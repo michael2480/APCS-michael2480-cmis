@@ -82,12 +82,16 @@ public class Tracker extends Robot
 
     public void boxDetermineAction() {
 
+        System.out.println("I THINK THAT GETDATA9 = "+getData(9));
         // this first if catches when the cube reaches a corner
-        if (getData(9) != 0 && (!isClearRight() && !isClearRight() && !isClearUp() && !isClearDown())) {
+        if (getData(9) != 0 && (isClearRight() && isClearLeft() && isClearUp() && isClearDown())) {
             cornerRotate();
         }
 
         // this else if block will continue movement for sides
+        
+
+        
         else if (getData(9) == 1) {
             topSide();
         }        
@@ -129,7 +133,7 @@ public class Tracker extends Robot
     }
 
     public void topSide() {
-        if (!isClearDown()) {
+        if (isClearDown()) {
             setData(0, 6);
             down();
         }
@@ -139,7 +143,7 @@ public class Tracker extends Robot
     }
 
     public void leftSide() {
-        if (!isClearRight()) {
+        if (isClearRight()) {
             setData(0, 6);
             right();
         }
@@ -149,7 +153,7 @@ public class Tracker extends Robot
     }
 
     public void rightSide() {
-        if (!isClearLeft()) {
+        if (isClearLeft()) {
             setData(0, 6);
             left();
         }
@@ -159,9 +163,9 @@ public class Tracker extends Robot
     }
 
     public void bottomSide() {
-        if (!isClearDown()) {
+        if (isClearUp()) {
             setData(0, 6);
-            down();
+            up();
         }
         else {
             left();
@@ -169,6 +173,7 @@ public class Tracker extends Robot
     }
 
     public void cornerRotate() {
+        System.out.println("hit corner");
         if (getData(9) == 1) {
             setData(9, 3);
             down();
@@ -266,6 +271,8 @@ public class Tracker extends Robot
     }
 
     public void behave() {
+        
+        System.out.println("Stage:"+getData(0) + "\tDoorStage:"+getData(7)+"\tBoxSide:"+getData(8)+"\tSideNumber:"+getData(9));
         if (getData(0) == 0) {
             goOrigin();
         }
@@ -286,7 +293,7 @@ public class Tracker extends Robot
         }            
         else if (getData(0) == 6) {
             if (getData(7) <= 1) {
-                determineSide();
+                //determineSide();
                 if (getData(9) == 1) {
                     down();
                     setData(8, 1);
@@ -315,6 +322,6 @@ public class Tracker extends Robot
             navigateBox();
         }
 
-        System.out.println("Stage:"+getData(0) + "\tDoorStage:"+getData(7)+"\tBoxSide:"+getData(8)+"\tSideNumber:"+getData(9));
+
     }
 }
