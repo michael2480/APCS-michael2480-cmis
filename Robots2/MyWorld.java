@@ -5,7 +5,7 @@ public class MyWorld extends World
     Class[] robotClasses = new Class[]{Tracker.class};
     public MyWorld() throws NoSuchMethodException
     {    
-        super(Greenfoot.getRandomNumber(50)+50, Greenfoot.getRandomNumber(50)+50, 5); 
+        super(Greenfoot.getRandomNumber(10)+30, Greenfoot.getRandomNumber(10)+30, 5); 
         setPaintOrder(Robot.class, Goal.class, Barrier.class);
         init();
     }

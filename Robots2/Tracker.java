@@ -34,8 +34,8 @@ public class Tracker extends Robot
      * getData(0) Stage number. 0:Go0,0 1:navigatenormal 4:determineSide 5:TraceBox 6:enterBox 7:navigatebox
      * getData(1) 
      * getData(2)
-     * getData(3)
-     * getData(4) remembered getdata9
+     * getData(3) 
+     * getData(4) 
      * getData(5) Door corner memory of side
      * getData(6) Just left a corner or door point 1:YES 2:NO
      * getData(7) Moving into box progress. 0 means it is just outside door. 1 is door 2 is entered.
@@ -88,15 +88,12 @@ public class Tracker extends Robot
             setData(0,6);
         }
 
-        if (getData(9) != 0 && (isClearRight() && isClearLeft() && isClearUp() && isClearDown())) {
-            setData(5,getData(9));
+        else if (isClearRight() && isClearLeft() && isClearUp() && isClearDown()) {
             cornerRotate();
         }
 
-        
         // this else if block will continue movement for sides
 
-        
         else if (getData(9) == 1) {
             topSide();
         }        
@@ -109,16 +106,12 @@ public class Tracker extends Robot
         else if (getData(9) == 4) {
             bottomSide();
         }
-
-        // first contact with a wall is dealt with here
-        else {
-            determineSide();
-        }
-
     }
 
     public void determineSide() {
 
+        setData(9,2); /*
+        
         if (!isClearLeft()) {
             setData(9, 3);
             rightSide();
@@ -134,7 +127,7 @@ public class Tracker extends Robot
         else if (!isClearUp()){
             setData(9, 4);
             bottomSide();
-        }
+        }*/
     }
 
     public void topSide() {
@@ -154,8 +147,6 @@ public class Tracker extends Robot
     }
 
     public void cornerRotate() {
-        
-        System.out.println("hit corner");
         if (getData(9) == 1) {
             setData(9, 3);
             down();
@@ -172,15 +163,15 @@ public class Tracker extends Robot
             setData(9, 2);
             up();
         }
-
-        setData(6,1);
     }
 
     public void navigateBox() {
 
-        //     getData(8) Enter Box Side 1:top 2:left 3:right 4:bottom
+        //     getData(9) Enter Box Side 1:top 2:left 3:right 4:bottom
 
-        if (getData(8) == 1){
+        System.out.println("9="+getData(9));
+        
+        if (getData(9) == 1){
             if(getX()%2 == 0) {
                 if (!isClearLeft()) {
                     down();
@@ -198,7 +189,7 @@ public class Tracker extends Robot
                 }
             }
         }
-        else if (getData(8) == 2){
+        else if (getData(9) == 2){
             if(getX()%2 == 0) {
                 if (!isClearDown()) {
                     right();
@@ -216,7 +207,7 @@ public class Tracker extends Robot
                 }
             }
         }
-        else if (getData(8) == 3){
+        else if (getData(9) == 3){
             if(getX()%2 == 0) {
                 if (!isClearUp()) {
                     left();
@@ -254,58 +245,48 @@ public class Tracker extends Robot
         }
     }
 
+    public void enterRoom() {
+        if (getData(9) == 1) {
+            down();
+        }        
+        else if (getData(9) == 2) {
+            right();
+        }
+        else if (getData(9) == 3) {
+            left();
+        }
+        else if (getData(9) == 4) {
+            up();
+        }
+    }
+
     public void behave() {
 
-        System.out.println("Stage:"+getData(0) + "\tDoorStage:"+getData(7)+"\tBoxSide:"+getData(8)+"\tSideNumber:"+getData(9));
+        System.out.println(""+getData(9));
         if (getData(0) == 0) {
             goOrigin();
         }
 
-        else if (getData(0) == 1) {  // TODO MAKE STAGE NUMBER NOT 5
+        else if (getData(0) == 1) {
             navigateNormally();
             right();
         }   
 
-        else if (getData(0) == 4) {  // TODO MAKE STAGE NUMBER NOT 5
+        else if (getData(0) == 4) {
             determineSide();
             setData(0,5);
             right();
         } 
 
-        else if (getData(0) == 5) {  // TODO MAKE STAGE NUMBER NOT 5
+        else if (getData(0) == 5) {
             boxDetermineAction();
         }            
-        else if (getData(0) == 6) {
-            if (getData(7) <= 1) {
-                setData(5,getData(9));
-                //determineSide();
-                if (getData(9) == 1) {
-                    down();
-                    //setData(8, 1);
-                }        
-                else if (getData(9) == 2) {
-                    right();
-                    //setData(8, 2);
-                }
-                else if (getData(9) == 3) {
-                    left();
-                    //setData(8, 3);
-                }
-                else if (getData(9) == 4) {
-                    up();
-                    //setData(8, 4);
-                }
-                setData(7, getData(7)+1);
-            }
-            else {
-                setData(9,getData(5));
-                setData(0,7);
-                // make it do a navigate move
-            }
+        else if (getData(0) == 6 || getData(0) == 7 || getData(0) == 8 ) {
+            setData(0, getData(0)+1);
+            enterRoom();
         }
 
-        else if (getData(0) == 7) {
-            setData(9,getData(5));
+        else if (getData(0) == 9) {
             navigateBox();
         }
 
