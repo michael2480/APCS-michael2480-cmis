@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
+import java.util.Random;
 public class Tracker extends Robot
 {
     public Tracker(){
@@ -34,7 +35,7 @@ public class Tracker extends Robot
      * getData(0) Stage number. 0:Go0,0 1:navigatenormal 4:determineSide 5:TraceBox 6:enterBox 7:navigatebox
      * getData(1) 
      * getData(2)
-     * getData(3) 
+     * getData(3) memory
      * getData(4) 
      * getData(5) Door corner memory of side
      * getData(6) Just left a corner or door point 1:YES 2:NO
@@ -85,6 +86,7 @@ public class Tracker extends Robot
         // this first if catches when the cube reaches a corner
 
         if ((!isClearRight() && !isClearLeft()) || (!isClearUp() && !isClearDown())) {
+            System.out.println("DOOR");
             setData(0,6);
         }
 
@@ -109,9 +111,6 @@ public class Tracker extends Robot
     }
 
     public void determineSide() {
-
-        setData(9,2); /*
-        
         if (!isClearLeft()) {
             setData(9, 3);
             rightSide();
@@ -127,7 +126,7 @@ public class Tracker extends Robot
         else if (!isClearUp()){
             setData(9, 4);
             bottomSide();
-        }*/
+        }
     }
 
     public void topSide() {
@@ -147,6 +146,8 @@ public class Tracker extends Robot
     }
 
     public void cornerRotate() {
+        setData(2,getData(9));
+        setData(3,getData(2));
         if (getData(9) == 1) {
             setData(9, 3);
             down();
@@ -169,10 +170,10 @@ public class Tracker extends Robot
 
         //     getData(9) Enter Box Side 1:top 2:left 3:right 4:bottom
 
-        System.out.println("9="+getData(9));
-        
-        if (getData(9) == 1){
-            if(getX()%2 == 0) {
+        System.out.println("3 = "+getData(3));
+
+        if (getData(3) == 1){
+            if(getY()%2 == 0) {
                 if (!isClearLeft()) {
                     down();
                 }
@@ -189,7 +190,7 @@ public class Tracker extends Robot
                 }
             }
         }
-        else if (getData(9) == 2){
+        else if (getData(3) == 2){
             if(getX()%2 == 0) {
                 if (!isClearDown()) {
                     right();
@@ -207,7 +208,7 @@ public class Tracker extends Robot
                 }
             }
         }
-        else if (getData(9) == 3){
+        else if (getData(3) == 3){
             if(getX()%2 == 0) {
                 if (!isClearUp()) {
                     left();
@@ -226,7 +227,7 @@ public class Tracker extends Robot
             }
         }
         else {
-            if(getX()%2 == 0) {
+            if(getY()%2 == 0) {
                 if (!isClearLeft()) {
                     up();
                 }
@@ -246,22 +247,21 @@ public class Tracker extends Robot
     }
 
     public void enterRoom() {
-        if (getData(9) == 1) {
+        if (getData(3) == 1) {
             down();
         }        
-        else if (getData(9) == 2) {
+        else if (getData(3) == 2) {
             right();
         }
-        else if (getData(9) == 3) {
+        else if (getData(3) == 3) {
             left();
         }
-        else if (getData(9) == 4) {
+        else if (getData(3) == 4) {
             up();
         }
     }
 
     public void behave() {
-
         System.out.println(""+getData(9));
         if (getData(0) == 0) {
             goOrigin();
@@ -281,14 +281,13 @@ public class Tracker extends Robot
         else if (getData(0) == 5) {
             boxDetermineAction();
         }            
-        else if (getData(0) == 6 || getData(0) == 7 || getData(0) == 8 ) {
+        else if (getData(0) == 6) {
             setData(0, getData(0)+1);
             enterRoom();
         }
 
-        else if (getData(0) == 9) {
+        else if (getData(0) == 7) {
             navigateBox();
         }
-
     }
 }
