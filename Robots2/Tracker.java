@@ -34,10 +34,10 @@ public class Tracker extends Robot
      * 
      * getData(0) Stage number. 0:Go0,0 1:navigatenormal 4:determineSide 5:TraceBox 6:enterBox 7:navigatebox
      * getData(1) 
-     * getData(2)
-     * getData(3) memory
+     * getData(2) memory side
+     * getData(3) memory side
      * getData(4) 
-     * getData(5) Door corner memory of side
+     * getData(5) 
      * getData(6) Just left a corner or door point 1:YES 2:NO
      * getData(7) Moving into box progress. 0 means it is just outside door. 1 is door 2 is entered.
      * getData(8) Enter Box Side 1:top 2:left 3:right 4:bottom
@@ -54,6 +54,9 @@ public class Tracker extends Robot
             }
         }
         else {
+            if (!isClearLeft()) {
+                setData(0,4);
+            }
             left();
         }
     }
@@ -245,6 +248,76 @@ public class Tracker extends Robot
             }
         }
     }
+    
+    public void reverseNav() {
+
+        //     getData(9) Enter Box Side 1:top 2:left 3:right 4:bottom
+
+        if (getData(3) == 1){
+            if(getY()%2 == 0) {
+                if (!isClearRight()) {
+                    setData(0,8);
+                    left();
+                }
+                right();
+            }
+            else {
+                if (!isClearLeft()) {
+                    setData(0,8);
+                    right();
+                }
+                left();
+            }
+        }
+        else if (getData(3) == 2){
+            if(getX()%2 == 0) {
+                if (!isClearUp()) {
+                    setData(0,8);
+                    down();
+                }
+                up();
+            }
+            else {
+                if (!isClearDown()) {
+                    setData(0,8);
+                    up();
+                }
+                down();
+            }
+        }
+        else if (getData(3) == 3){
+            if(getX()%2 == 0) {
+                if (!isClearDown()) {
+                    setData(0,8);
+                    up();
+                }
+                down();
+            }
+            else {
+                if (!isClearUp()) {
+                    setData(0,8);
+                    down();
+                }
+                up();
+            }
+        }
+        else {
+            if(getY()%2 == 0) {
+                if (!isClearRight()) {
+                    setData(0,8);
+                    left();
+                }
+                right();
+            }
+            else {
+                if (!isClearLeft()) {
+                    setData(0,8);
+                    left();
+                }
+                left();
+            }
+        }
+    }
 
     public void enterRoom() {
         if (getData(3) == 1) {
@@ -282,11 +355,15 @@ public class Tracker extends Robot
             boxDetermineAction();
         }            
         else if (getData(0) == 6) {
-            setData(0, getData(0)+1);
+            setData(0, 7);
             enterRoom();
         }
-
+        
         else if (getData(0) == 7) {
+            reverseNav();
+        }
+
+        else if (getData(0) == 8) {
             navigateBox();
         }
     }
