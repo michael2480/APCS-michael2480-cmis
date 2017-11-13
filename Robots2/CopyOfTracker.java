@@ -1,9 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
 import java.util.Random;
-public class Tracker extends Robot
+public class CopyOfTracker extends Robot
 {
-    public Tracker(){
+    public CopyOfTracker(){
         super(Color.black);
     }
 

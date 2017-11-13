@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
 import java.util.Scanner ;  
-public class Peter2Killbot extends Robot
+public class Arrows extends Robot
 {
-    public Peter2Killbot(){
-        super(Color.red);
+    public Arrows(){
+        super(Color.blue);
     }
 
     public void init(){
@@ -26,27 +26,15 @@ public class Peter2Killbot extends Robot
      */
     public void behave(){
 
-        if(getX()%2==1){
-            if(isClearUp()==false){
-                if(isClearRight()==false){
-                    left();
-                }else{
-                    right();
-                }
-            }else{
-                up();
-            }
-        }else{
-            if(isClearDown()==false){
-                if(isClearRight()==false){
-                    left();
-                }else{
-                    right();
-                }
-            }else{
-                down();
-            }
-        }
+        if(Greenfoot.isKeyDown("left")){
+            left();
+        }else if(Greenfoot.isKeyDown("down")){
+            down();
+        }else if(Greenfoot.isKeyDown("right")){
+            right();
+        }else if(Greenfoot.isKeyDown("up")){
+            up();
 
+        }
     }
 }

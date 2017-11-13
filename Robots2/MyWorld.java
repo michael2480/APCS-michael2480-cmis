@@ -2,10 +2,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.lang.reflect.*;
 public class MyWorld extends World
 {
-    Class[] robotClasses = new Class[]{Tracker.class};
+    Class[] robotClasses = new Class[]{WhipBot.class, wasd.class, Arrows.class, NumPad.class};
     public MyWorld() throws NoSuchMethodException
     {    
-        super(Greenfoot.getRandomNumber(10)+30, Greenfoot.getRandomNumber(10)+30, 5); 
+        super(Greenfoot.getRandomNumber(25)+30, Greenfoot.getRandomNumber(25)+30, 5); 
         setPaintOrder(Robot.class, Goal.class, Barrier.class);
         init();
     }
