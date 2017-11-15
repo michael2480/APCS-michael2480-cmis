@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=MyWorld
+comment0.text=\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=MyWorld()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ path()
+comment4.params=b
+comment4.target=void\ win(Robot)
+numComments=5

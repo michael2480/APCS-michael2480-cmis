@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=RobotTemplate
+comment1.params=d
+comment1.target=RobotTemplate(int)
+comment2.params=
+comment2.target=void\ init()
+comment3.params=
+comment3.target=void\ behave()
+comment3.text=\n\ What\ your\ robot\ can\ do\:\n\ right()\ \=>\ move\ 1\ to\ the\ right\n\ left()\ \=>\ move\ 1\ to\ the\ left\n\ up()\ \=>\ move\ 1\ up\n\ down()\ \=>\ move\ 1\ down\n\ isClearRight()\ \=>\ true\ means\ no\ block\ to\ the\ right\n\ isClearRight()\ \=>\ true\ means\ no\ block\ to\ the\ left\n\ isClearUp()\ \=>\ true\ means\ no\ block\ up\n\ isClearDown()\ \=>\ true\ means\ no\ block\ down\n\ getX()\ \=>\ returns\ x\ coordinate\ of\ robot\n\ getY()\ \=>\ returns\ y\ coordinate\ of\ robot\ \n\ public\ final\ int[]\ getData()\ \=>\ returns\ array\ of\ int\ data\n\ public\ final\ int\ getData(int\ idx)\ \=>\ returns\ int\ data\ from\ index\ idx\n\ public\ final\ void\ setData(int\ idx,\ int\ value)\ \=>\ sets\ value\ of\ data\ array\ at\ idx\n\ public\ final\ void\ setData(int[]\ newData)\ \=>\ replaces\ values\ in\ data\ array\ with\ values\ in\ newData\n
+numComments=4

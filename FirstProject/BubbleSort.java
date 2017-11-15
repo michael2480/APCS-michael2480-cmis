@@ -27,7 +27,6 @@ public class BubbleSort
 
     public static void sort(int[] array){
         boolean solved = false;
-        boolean hasCopied = false;
         int left;
         int right;
         while (!solved) {
