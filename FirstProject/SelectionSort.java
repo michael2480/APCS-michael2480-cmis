@@ -19,10 +19,10 @@ public class SelectionSort
 
     public static void sort(int[] array){
         boolean sorted = false;
-        int start;
-        int start2;
-        int lowest;
-        int temp;
+        int start = 0;
+        int start2= 0;
+        int lowest = 0;
+        int temp = 0;
         
         while (!sorted) {
             sorted = true;

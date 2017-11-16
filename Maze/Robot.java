@@ -113,7 +113,7 @@ public abstract class Robot extends Actor
         
         behave(); //Abstract method implemented in subclass.
         if(isTouching(Barrier.class)){
-            System.out.println("ouch!");
+
             super.setLocation(oldX, oldY);
         }
         stuck = false;

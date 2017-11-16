@@ -36,7 +36,7 @@ public class Wanderer extends Robot
      */
     public void behave(){
         
-        int move;
+        int move = 0;
         
         if (getData(0) == 0) {
             if (isClearDown()) {
@@ -71,6 +71,8 @@ public class Wanderer extends Robot
                 move = 3;
             }
         }
+        
+        System.out.println(""+ move);
         
         switch(move){
             case 0: left(); break;
