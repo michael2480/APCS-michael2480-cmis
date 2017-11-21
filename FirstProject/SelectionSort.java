@@ -1,52 +1,49 @@
-public class SelectionSort
-{
-    public static void main(String[] args){
-        int[] numbers = new int[15];
-        for(int i = 0; i < numbers.length; i++){
-            numbers[i] = (int)(Math.random() * 100);
-        }
-        print(numbers);
-        sort(numbers);
-        print(numbers);
-    }
+public class SelectionSort {
+    public static int[] sort(int[] array) {
 
-    public static void print(int[] array){
-        for(int i : array){
-            System.out.println(i);
-        }
-        System.out.println();
-    }
+        int[] arrayCopy = new int[array.length];
+        int indexOfLeast;
 
-    public static void sort(int[] array){
-        boolean sorted = false;
-        int start = 0;
-        int start2= 0;
-        int lowest = 0;
-        int temp = 0;
-        
-        while (!sorted) {
-            sorted = true;
-            for (int i = 0; i < array.length - 1; i++) {
-                if (array[i] > array[i+1]) {
-                    start2 = i;
-                    sorted = false;
+        // copy array into arrayCopy
+        System.arraycopy(array, 0, arrayCopy, 0, array.length);
+
+        // for every item in the array
+        for (int i = 0; i < arrayCopy.length - 1; i++) {
+
+            indexOfLeast = 0;
+
+            // for every time after it
+            for (int i2 = i; i2 < arrayCopy.length; i2++) {
+
+                // make first item the current min
+                if (indexOfLeast == 0) {
+                    indexOfLeast = i2;
                 }
-            }
-            start = start2;
-            // array start is initial
-            if (!sorted) {
-                lowest = 100;
-                for (int i = start + 1; i < array.length; i++) {
-                    lowest = start + 1;
-                    if (array[lowest] > array[i])  {
-                        lowest = i;
+
+                // set indexOfLeast as the min thereafter
+                else {
+                    if (arrayCopy[i2] < arrayCopy[indexOfLeast]) {
+                        indexOfLeast = i2;
                     }
                 }
-                
+
+                // switch the two and return
+                switchIndexes(arrayCopy, i, indexOfLeast);
+
             }
-            temp = array[start];
-            array[start] = array[lowest];
-            array[lowest] = temp;
+
         }
+
+        return arrayCopy;
+    }
+
+    public static int[] switchIndexes (int[] arr, int idx1, int idx2) {
+        int tmp;
+        if (idx1 != idx2) {
+            tmp = arr[idx1];
+            arr[idx1] = arr[idx2];
+            arr[idx2] = tmp;
+        }
+        return arr;
     }
 }

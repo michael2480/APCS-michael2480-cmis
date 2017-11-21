@@ -18,12 +18,12 @@ public class BubbleSort
         print(numbers);
     }
 
-    public static void print(int[] array){
-        for(int i : array){
-            System.out.println(i);
+        public static void print(int[] array){
+            for(int i : array){
+                System.out.println(i);
+            }
+            System.out.println();
         }
-        System.out.println();
-    }
 
     public static void sort(int[] array){
         boolean solved = false;
