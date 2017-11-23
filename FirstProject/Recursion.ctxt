@@ -1,4 +1,10 @@
 #BlueJ class context
-comment0.params=word\ times
-comment0.target=java.lang.String\ Stringy(java.lang.String,\ int)
-numComments=1
+comment0.target=Recursion
+comment0.text=\n\ Write\ a\ description\ of\ class\ Stringy\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=base\ exp
+comment2.target=int\ Power(int,\ int)
+comment3.params=x
+comment3.target=int\ Factorial(int)
+numComments=4

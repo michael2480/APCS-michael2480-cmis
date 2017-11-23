@@ -7,12 +7,27 @@
  */
 public class Recursion
 {
-    public static String Stringy (String word, int times) {
-        String word2 = "";
-        if (times > 0) {
-            word2 = word+word;
-            Stringy(word2, times - 1);
+    public static void main (String args[]) {
+        System.out.println("" + Power(2,3));
+    }
+
+    public static int Power (int base, int exp) {
+        if (exp > 0) {
+            return base * Power(base, exp - 1);
         }
-        return word2;
+
+        else {
+            return 1;
+        }
+    }
+    
+    public static int Factorial (int x) {
+        if (x > 0) {
+            return x * Factorial(x - 1);
+        }
+
+        else {
+            return 1;
+        }
     }
 }
