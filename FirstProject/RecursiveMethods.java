@@ -82,8 +82,18 @@ public class RecursiveMethods
             }
         }
     }
-
-    public static int binToDec2 (String b) {
+    
+    public static int fib(int n) {
+        if (n < 3) {
+            return 1;
+        }
+        else {
+            return fib(n-1) + fib (n-2);
+        }
+    }
+    
+    /*
+    public static int binToDec (String b) {
         int b2 = Integer.parseInt(b);
         int base = 7;
         while (pow(10,base-1) > b2) {
@@ -109,22 +119,5 @@ public class RecursiveMethods
             return 0;
         }
     }
-
-    //  1  2  3  4  5  6   7   8   9  10  
-    //  1, 1, 2, 3, 5, 8, 13, 21, 34, ...
-
-    // fib(9) = fib(8) + fib(7)
-    //        = fib(7)+fib(6) + fib(6)+fib(5) 
-    //        = fib(6)+fib(5)+fib(5)+fib(4) + fib(5)+fib(4)+fib(4)+fib(3)
-    //        = fib(5)+fib(4)+fib(4)+fib(3)+fib(4)+fib(3)+fib(3)+fib(2) + fib(4)+fib(3)+fib(3)+1+fib(3)+1+1+1
-    //        = fib(4)+fib(3)+fib(3)+1+fib(3)+1+1+1+fib(3)+1+1+1 + fib(4)+fib(3)+fib(3)+1+fib(3)+1+1+1
-
-    public static int fib(int n) {
-        if (n < 3) {
-            return 1;
-        }
-        else {
-            return fib(n-1) + fib (n-2);
-        }
-    }
+    */
 }

@@ -13,10 +13,6 @@ comment5.target=int\ mul(int,\ int)
 comment6.params=b
 comment6.target=int\ binToDec(java.lang.String)
 comment6.text=\n\ 2^0\ \=\ 1\n\ 2^1\ \=\ 2\ \n\ 2^2\ \=\ 4\n\ 2^3\ \=\ 8\ \n\ 2^4\ \=\ 16\n\ 2^5\ \=\ 32\ \n\n\ 1\ \ -\ 1\n\ 2\ \ -\ 10\n\ 3\ \ -\ 11\n\ 4\ \ -\ 100\n\ 5\ \ -\ 101\n\ 6\ \ -\ 110\n\ 7\ \ -\ 111\n\ 8\ \ -\ 1000\n\ 9\ \ -\ 1001\n\ 10\ -\ 1010\n\ 11\ -\ 1011\n\ 12\ -\ 1100\n\ 13\ -\ 1101\n\ 14\ -\ 1110\n\ 15\ -\ 1111\n\ 16\ -\ 10000\n
-comment7.params=b
-comment7.target=int\ binToDec2(java.lang.String)
-comment8.params=b\ baseinit\ base\ pos
-comment8.target=int\ doBinToDec(java.lang.String,\ int,\ int,\ int)
-comment9.params=n
-comment9.target=int\ fib(int)
-numComments=10
+comment7.params=n
+comment7.target=int\ fib(int)
+numComments=8
