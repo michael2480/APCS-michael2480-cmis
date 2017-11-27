@@ -6,15 +6,13 @@ public class RecursiveMethods
     }
 
     public static int pow(int a, int n) {
-        int result = 0;
+        
         if (n > 0) {
-            result = result * pow(a, n - 1);
+            return a * pow(a, n - 1);
         }
         else {
             return 1;
         }
-
-        return result;
     }
 
     public static String grid(int w, int h, String symbol) {
@@ -77,7 +75,7 @@ public class RecursiveMethods
         }
         else {
             if (b.charAt(0) == '1') {
-                return (int)Math.pow(2, base) + binToDec(b.substring(1, b.length()));  
+                return pow(2, base) + binToDec(b.substring(1, b.length()));  
             }
             else {
                 return binToDec(b.substring(1, b.length()));
@@ -88,7 +86,7 @@ public class RecursiveMethods
     public static int binToDec2 (String b) {
         int b2 = Integer.parseInt(b);
         int base = 7;
-        while (Math.pow(10,base-1) > b2) {
+        while (pow(10,base-1) > b2) {
             base -= 1;
         }
         System.out.println(Integer.toString(b2) + " " + base);
@@ -100,8 +98,8 @@ public class RecursiveMethods
         if (pos < baseinit) {
             System.out.println(b  + " " + (base-1) + " [" + pos + "]  =" + b.charAt(pos));
             if (Character.getNumericValue(b.charAt(pos)) == 1) {
-                System.out.println(Math.pow(2, base-1));
-                return (int)Math.pow(2, base-1) + doBinToDec(b, baseinit, base-1, pos+1);
+                System.out.println(pow(2, base-1));
+                return pow(2, base-1) + doBinToDec(b, baseinit, base-1, pos+1);
             }
             else {
                 return 0 + doBinToDec(b, baseinit, base-1, pos+1);
