@@ -48,15 +48,6 @@ public class RecursiveMethods
         return s.substring(0,s.length()-1);
     }
     
-    public static int bin2Dec(String s) {
-        if (!s.equals("")) {
-            return s.charAt(s.length()-1) - 48 + 2*bin2Dec(chopString(s));
-        }
-        else {
-            return 0;
-        }
-    }
-    
     //  1  2  3  4  5  6   7   8   9  10  
     //  1, 1, 2, 3, 5, 8, 13, 21, 34, ...
     
