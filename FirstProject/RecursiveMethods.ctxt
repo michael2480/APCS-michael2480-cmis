@@ -2,6 +2,8 @@
 comment0.target=RecursiveMethods
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
+comment10.params=s\ t\ r
+comment10.target=java.lang.String\ replace(java.lang.String,\ java.lang.String,\ java.lang.String)
 comment2.params=a\ n
 comment2.target=int\ pow(int,\ int)
 comment3.params=w\ h\ symbol
@@ -15,4 +17,8 @@ comment6.target=int\ binToDec(java.lang.String)
 comment6.text=\n\ 2^0\ \=\ 1\n\ 2^1\ \=\ 2\ \n\ 2^2\ \=\ 4\n\ 2^3\ \=\ 8\ \n\ 2^4\ \=\ 16\n\ 2^5\ \=\ 32\ \n\n\ 1\ \ -\ 1\n\ 2\ \ -\ 10\n\ 3\ \ -\ 11\n\ 4\ \ -\ 100\n\ 5\ \ -\ 101\n\ 6\ \ -\ 110\n\ 7\ \ -\ 111\n\ 8\ \ -\ 1000\n\ 9\ \ -\ 1001\n\ 10\ -\ 1010\n\ 11\ -\ 1011\n\ 12\ -\ 1100\n\ 13\ -\ 1101\n\ 14\ -\ 1110\n\ 15\ -\ 1111\n\ 16\ -\ 10000\n
 comment7.params=n
 comment7.target=int\ fib(int)
-numComments=8
+comment8.params=s
+comment8.target=java.lang.String\ reverse(java.lang.String)
+comment9.params=s\ t
+comment9.target=java.lang.String\ remove(java.lang.String,\ java.lang.String)
+numComments=11

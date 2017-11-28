@@ -6,7 +6,7 @@ public class RecursiveMethods
     }
 
     public static int pow(int a, int n) {
-        
+
         if (n > 0) {
             return a * pow(a, n - 1);
         }
@@ -82,7 +82,7 @@ public class RecursiveMethods
             }
         }
     }
-    
+
     public static int fib(int n) {
         if (n < 3) {
             return 1;
@@ -91,33 +91,47 @@ public class RecursiveMethods
             return fib(n-1) + fib (n-2);
         }
     }
-    
-    /*
-    public static int binToDec (String b) {
-        int b2 = Integer.parseInt(b);
-        int base = 7;
-        while (pow(10,base-1) > b2) {
-            base -= 1;
-        }
-        System.out.println(Integer.toString(b2) + " " + base);
-        return doBinToDec(Integer.toString(b2), base, base, 0);
-    }
 
-    public static int doBinToDec (String b, int baseinit, int base, int pos) {
-        // 1110, 4, 4, 0
-        if (pos < baseinit) {
-            System.out.println(b  + " " + (base-1) + " [" + pos + "]  =" + b.charAt(pos));
-            if (Character.getNumericValue(b.charAt(pos)) == 1) {
-                System.out.println(pow(2, base-1));
-                return pow(2, base-1) + doBinToDec(b, baseinit, base-1, pos+1);
-            }
-            else {
-                return 0 + doBinToDec(b, baseinit, base-1, pos+1);
-            }
+    public static String reverse(String s) {
+        if (s.length() != 1) {
+            return reverse(s.substring(1,s.length())) + s.substring(0,1);
         }
         else {
-            return 0;
+            return s;
         }
     }
-    */
+
+    public static String remove(String s, String t) {
+        if (s.length() == 1) {
+            if (s.equals(t)) {
+                return "";
+            }
+            else {
+                return s;
+            }
+        }
+        else if (s.substring(0,1).equals(t)) {
+            return remove(s.substring(1,s.length()), t);
+        }
+        else {
+            return s.substring(0,1) + remove(s.substring(1,s.length()), t);
+        }
+    }
+    
+    public static String replace(String s, String t, String r) {
+        if (s.length() == 1) {
+            if (s.equals(t)) {
+                return r;
+            }
+            else {
+                return s;
+            }
+        }
+        else if (s.substring(0,1).equals(t)) {
+            return r + replace(s.substring(1,s.length()), t, r);
+        }
+        else {
+            return s.substring(0,1) + replace(s.substring(1,s.length()), t, r);
+        }
+    }
 }
