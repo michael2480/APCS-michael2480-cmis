@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=MergeSort
+comment1.params=args
+comment1.target=int[]\ main(java.lang.String[])
+comment2.params=inputArr
+comment2.target=int[]\ sort(int[])
+comment3.params=inputArr\ isFirstHalf
+comment3.target=int[]\ split(int[],\ boolean)
+comment4.params=inputArray\ start\ stop
+comment4.target=int[]\ subArray(int[],\ int,\ int)
+numComments=5
