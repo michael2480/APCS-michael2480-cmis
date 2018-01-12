@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class MergeSort
 {
@@ -14,27 +15,35 @@ public class MergeSort
 
     public static int[] main (String[] args) {
         int[] testArr = {1,4,2,9,77,4,5,7,22,0};
-        return sort(testArr);
+        return mainSort(testArr);
     }
 
-    public static int[] sort (int[] inputArr) {
+    public static int[] mainSort (int[] inputArr) {
         if (inputArr.length == 1) {
             return inputArr;
         }
         else {
-            int[] arr1 = split(inputArr, true);
-            int[] arr2 = split(inputArr, false);
-            return mergeSort(sort(arr1), sort(arr2));
+            int len = inputArr.length;
+            if (len == 2) {
+                int[] arr1 = {inputArr[0]};
+                int[] arr2 = {inputArr[1]};
+                return merge(mainSort(arr2), mainSort(arr2));
+            }
+            else {
+                int[] arr1 = Arrays.copyOfRange(mainSort(inputArr), 0, len/2);
+                int[] arr2 = Arrays.copyOfRange(mainSort(inputArr), (len/2), len);
+                return merge(mainSort(arr1), mainSort(arr2));
+            }
         }
     }
 
-    public static int[] mergeSort (int[] a1, int[] a2) {
+    public static int[] merge (int[] a1, int[] a2) {
         int[] sortedArr = new int[a1.length + a2.length];
         int a1pos = 0;
         int a2pos = 0;
         for (int i = 0; i < a1.length + a2.length; i++) { 
             System.out.println("1-"+a1pos+"\t2-"+a2pos+"\t i-"+i);
-            if (a1pos == a1.length && a2pos == a2.length-1) {
+            if (!(a1pos == a1.length && a2pos == a2.length-1)) {
                 if (a1pos == a1.length) {
                     sortedArr[i] = a2[a2pos];
                     a2pos += 1;
@@ -56,17 +65,6 @@ public class MergeSort
             }
         }
         return sortedArr;
-    }
-
-    public static int[] split (int[] inputArr, boolean isFirstHalf) {
-        int len = inputArr.length; // 5
-        int mid = (int)(len/2); // 2
-        if (isFirstHalf) {
-            return subArray(inputArr, 0, mid); // 0 , 1 , 2
-        }
-        else {
-            return subArray(inputArr, mid+1, len-1); //3 , 4
-        }
     }
 
     public static int[] subArray (int[] inputArray, int start, int stop) {
