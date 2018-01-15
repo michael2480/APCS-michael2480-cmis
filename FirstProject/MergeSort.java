@@ -6,7 +6,7 @@ public class MergeSort
      *                a d f g w x   |   l j h i p o
      *           a d f  |  g w x    |    l j h  |  i p o
      *         a d | f  | g w  | x  |  l j  | h |  i p  | o
-     *       a - d | f | g - w | x | l - j | h | i - p | o
+     *        a - d | f | g - w | x | l - j | h | i - p | o
      *       a+d  -  f  | g+w  -  x | j+l  -  h |  i+p  -  o
      *           a+f+d  -   g+w+x   |   h+j+l   -   i+p+o
      *             a+d+f+g+w+x      -      h+i+j+l+o+p
@@ -27,11 +27,11 @@ public class MergeSort
             if (len == 2) {
                 int[] arr1 = {inputArr[0]};
                 int[] arr2 = {inputArr[1]};
-                return merge(mainSort(arr2), mainSort(arr2));
+                return merge(mainSort(arr1), mainSort(arr2));
             }
             else {
-                int[] arr1 = Arrays.copyOfRange(mainSort(inputArr), 0, len/2);
-                int[] arr2 = Arrays.copyOfRange(mainSort(inputArr), (len/2), len);
+                int[] arr1 = subArray(mainSort(inputArr), 0, len/2);
+                int[] arr2 = subArray(mainSort(inputArr), (len/2), len);
                 return merge(mainSort(arr1), mainSort(arr2));
             }
         }
@@ -42,8 +42,7 @@ public class MergeSort
         int a1pos = 0;
         int a2pos = 0;
         for (int i = 0; i < a1.length + a2.length; i++) { 
-            System.out.println("1-"+a1pos+"\t2-"+a2pos+"\t i-"+i);
-            if (!(a1pos == a1.length && a2pos == a2.length-1)) {
+            if (!(a1pos == a1.length && a2pos == a2.length)) {
                 if (a1pos == a1.length) {
                     sortedArr[i] = a2[a2pos];
                     a2pos += 1;
