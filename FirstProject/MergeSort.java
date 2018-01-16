@@ -74,4 +74,18 @@ public class MergeSort
         return returnArr;
     }
 
+    public static void printArray(int[] array, boolean skip) {    
+        for (int index = 0; index < array.length; index++) {        
+            if (skip) {
+                if (index % 2 == 1) {
+                    System.out.println("Index: " + index + "\tValue: " + array[index]);
+                }
+            }
+            else {
+                System.out.println("Index: " + index + "\tValue: " + array[index]);
+            }   
+        }         
+    }    
+    
+    
 }
