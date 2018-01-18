@@ -19,20 +19,20 @@ public class MergeSort
     }
 
     public static int[] mainSort (int[] inputArr) {
+        //System.out.println(inputArr.length);
         if (inputArr.length == 1) {
             return inputArr;
         }
         else {
             int len = inputArr.length;
             if (len == 2) {
-                int[] arr1 = {inputArr[0]};
-                int[] arr2 = {inputArr[1]};
-                return merge(mainSort(arr1), mainSort(arr2));
+                return merge(mainSort(new int[] {inputArr[0]}), mainSort(new int[] {inputArr[1]}));
+            }
+            else if (len == 3) {
+                return merge(mainSort(subArray((inputArr), 0, 2)), mainSort(new int[] {inputArr[2]}));
             }
             else {
-                int[] arr1 = subArray(mainSort(inputArr), 0, len/2);
-                int[] arr2 = subArray(mainSort(inputArr), (len/2), len);
-                return merge(mainSort(arr1), mainSort(arr2));
+                return merge(mainSort(subArray((inputArr), 0, len/2)), mainSort(subArray((inputArr), (len/2), len)));
             }
         }
     }
@@ -67,25 +67,12 @@ public class MergeSort
     }
 
     public static int[] subArray (int[] inputArray, int start, int stop) {
-        int[] returnArr = new int[stop-start+1];
-        for (int i = 0; i < returnArr.length; i++) {
+        int[] returnArr = new int[stop-start];
+        for (int i = 0; (i+start < stop); i++) {
             returnArr[i] = inputArray[i+start];
         }
         return returnArr;
-    }
-
-    public static void printArray(int[] array, boolean skip) {    
-        for (int index = 0; index < array.length; index++) {        
-            if (skip) {
-                if (index % 2 == 1) {
-                    System.out.println("Index: " + index + "\tValue: " + array[index]);
-                }
-            }
-            else {
-                System.out.println("Index: " + index + "\tValue: " + array[index]);
-            }   
-        }         
-    }    
+    }   
     
     
 }

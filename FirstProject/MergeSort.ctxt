@@ -9,6 +9,4 @@ comment3.params=a1\ a2
 comment3.target=int[]\ merge(int[],\ int[])
 comment4.params=inputArray\ start\ stop
 comment4.target=int[]\ subArray(int[],\ int,\ int)
-comment5.params=array\ skip
-comment5.target=void\ printArray(int[],\ boolean)
-numComments=6
+numComments=5
