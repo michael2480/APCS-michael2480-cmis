@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Song
+comment1.params=
+comment1.target=Song()
+comment2.params=name\ lyrics\ isExplicit
+comment2.target=Song(java.lang.String,\ java.lang.String,\ boolean)
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4
