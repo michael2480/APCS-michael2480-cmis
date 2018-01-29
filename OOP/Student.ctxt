@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Student
+comment1.params=
+comment1.target=Student()
+comment2.params=name\ surname\ age\ isMale
+comment2.target=Student(java.lang.String,\ java.lang.String,\ int,\ boolean)
+numComments=3
