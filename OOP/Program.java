@@ -13,7 +13,11 @@ public class Program
         String minute = JOptionPane.showInputDialog("Minute: \n");
         String second = JOptionPane.showInputDialog("Second: \n");
         
+        Card[] myHand = new Card[3];
         
+        for (int i = 0; i < 3; i ++) {
+            myHand[i] = new Card();
+        }
         
     }
 }
