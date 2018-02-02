@@ -1,5 +1,9 @@
 #BlueJ class context
 comment0.target=CardDriver2
-comment1.params=card
-comment1.target=int\ intCardCounter(Card)
-numComments=2
+comment1.params=
+comment1.target=void\ findWinner()
+comment2.params=cards
+comment2.target=int\ handCounter(Card[])
+comment3.params=card
+comment3.target=int\ CardCounter(Card)
+numComments=4
