@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Pen
+comment1.params=
+comment1.target=Pen()
+comment10.params=
+comment10.target=void\ refillInk()
+comment11.params=toWrite
+comment11.target=void\ write(java.lang.String)
+comment12.params=
+comment12.target=java.lang.String\ toString()
+comment2.params=
+comment2.target=double\ getInk()
+comment3.params=ink
+comment3.target=void\ setInk(double)
+comment4.params=
+comment4.target=java.lang.String\ getBrand()
+comment5.params=color
+comment5.target=void\ setBrand(java.lang.String)
+comment6.params=
+comment6.target=java.lang.String\ getColor()
+comment7.params=color
+comment7.target=void\ setColor(java.lang.String)
+comment8.params=prettyFormat
+comment8.target=java.lang.String\ getPrice(boolean)
+comment9.params=proposedPrice
+comment9.target=void\ setPrice(int)
+numComments=13
