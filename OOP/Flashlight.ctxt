@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Flashlight
+comment1.params=
+comment1.target=void\ toggle()
+comment1.text=\ Sample\ output\ \n\ \ \ \ Test\ toggle\n\ \ \ \ \=\=\=\=\=\=\=\=\=\=\=\n\ \ \ \ The\ flashlight\ is\ off.\n\ \ \ \ There\ is\ a\ medium\ white\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ The\ flashlight\ is\ off.\n\ \ \ \ Test\ changeColor\n\ \ \ \ \=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\n\ \ \ \ There\ is\ a\ medium\ white\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ There\ is\ a\ medium\ red\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ There\ is\ a\ medium\ blue\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ There\ is\ a\ medium\ yellow\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ There\ is\ a\ medium\ white\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ There\ is\ a\ medium\ white\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ There\ is\ a\ medium\ white\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ There\ is\ a\ medium\ white\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ There\ is\ a\ medium\ white\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ Test\ getIntensity,\ decIntensity,\ incIntensity\n\ \ \ \ \=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\n\ \ \ \ medium\n\ \ \ \ dim\n\ \ \ \ extremly\ dim\n\ \ \ \ extremly\ dim\n\ \ \ \ extremly\ dim\n\ \ \ \ extremly\ dim\n\ \ \ \ extremly\ dim\n\ \ \ \ extremly\ dim\n\ \ \ \ extremly\ dim\n\ \ \ \ extremly\ dim\n\ \ \ \ extremly\ dim\n\ \ \ \ dim\n\ \ \ \ medium\n\ \ \ \ bright\n\ \ \ \ retina\ searingly\ bright\n\ \ \ \ retina\ searingly\ bright\n\ \ \ \ retina\ searingly\ bright\n\ \ \ \ retina\ searingly\ bright\n\ \ \ \ retina\ searingly\ bright\n\ \ \ \ retina\ searingly\ bright\n\ \ \ \ retina\ searingly\ bright\n
+comment2.params=color
+comment2.target=void\ changeColor(java.lang.String)
+comment3.params=
+comment3.target=java.lang.String\ toString()
+comment4.params=
+comment4.target=void\ incIntensity()
+comment5.params=
+comment5.target=void\ decIntensity()
+comment6.params=
+comment6.target=java.lang.String\ getIntensityDescription()
+comment7.params=args
+comment7.target=void\ main(java.lang.String[])
+numComments=8
