@@ -2,4 +2,6 @@
 comment0.target=Principal
 comment1.params=name
 comment1.target=Principal(java.lang.String)
-numComments=2
+comment2.params=amount
+comment2.target=void\ changeLifeForce(int)
+numComments=3

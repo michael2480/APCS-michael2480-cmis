@@ -4,6 +4,10 @@ public abstract class Person
     private String name;
     private double lifeForce;
     
+    public void changeLifeForce (double amount) {
+        setLifeForce(amount);
+    }
+    
     public double getLifeForce () {
         return this.lifeForce;
     }
