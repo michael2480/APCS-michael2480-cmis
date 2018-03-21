@@ -1,6 +1,8 @@
 
 public class Teacher extends Person
 {
+    private boolean hasJob;
+    private String bossName;
     public Teacher(String name) {
         super(name);
     }
@@ -10,4 +12,14 @@ public class Teacher extends Person
             super.changeLifeForce(amount);
         }
     }
+    
+    public void setHasJob (boolean m) {
+        this.hasJob = m;
+    }
+    
+    public void setBossName (String m) {
+        this.bossName = m;
+    }
+    
+    
 }

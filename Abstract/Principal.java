@@ -10,4 +10,14 @@ public class Principal extends Person
             super.changeLifeForce(amount);
         }
     }
+    
+    public String getName () {
+        return super.getName();
+    }
+    
+    public boolean hire (Teacher t) {
+        t.setHasJob(true);
+        t.setBossName(super.getName());
+        return true;
+    }
 }

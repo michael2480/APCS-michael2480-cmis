@@ -2,9 +2,12 @@
 public class PeopleProgram
 {
     public static void main (String[] args) {
-        Teacher APComSciTeacher = new Teacher("Nathan");
-        Principal Willette = new Principal("Aaron");
-        Willette.setName("Aaron");
-        Willette.toString();
+        Teacher englishMan = new Teacher("Bob");
+        Principal jim = new Principal("Jimmy");
+        jim.setName("Aaron");
+        jim.toString();
+        if (englishMan.hire(jim)) {
+            
+        }
     }
 }
