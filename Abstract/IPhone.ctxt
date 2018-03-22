@@ -1,3 +1,9 @@
 #BlueJ class context
 comment0.target=IPhone
-numComments=1
+comment1.params=
+comment1.target=java.lang.String\ getModel()
+comment2.params=s
+comment2.target=void\ setModel(java.lang.String)
+comment3.params=brand\ cost\ model
+comment3.target=IPhone(java.lang.String,\ double,\ java.lang.String)
+numComments=4
