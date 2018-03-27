@@ -6,4 +6,6 @@ comment2.params=s
 comment2.target=void\ setModel(java.lang.String)
 comment3.params=brand\ cost\ model
 comment3.target=IPhone(java.lang.String,\ double,\ java.lang.String)
-numComments=4
+comment4.params=
+comment4.target=java.lang.String\ toString()
+numComments=5

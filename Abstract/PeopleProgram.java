@@ -6,8 +6,8 @@ public class PeopleProgram
         Principal jim = new Principal("Jimmy");
         jim.setName("Aaron");
         jim.toString();
-        if (englishMan.hire(jim)) {
-            
+        if (jim.hire(englishMan)) {
+            System.out.println("yay");
         }
     }
 }

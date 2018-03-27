@@ -16,4 +16,8 @@ public class IPhone extends MyDevice
         this.model = model;
     }
 
+    public String toString() {
+        return "IPhone " + model;
+    }
+    
 }
