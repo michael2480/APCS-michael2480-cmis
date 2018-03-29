@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Quicksand
+comment1.params=food
+comment1.target=boolean\ eat(greenfoot.Actor)
+comment2.params=
+comment2.target=void\ changePosition()
+comment3.params=
+comment3.target=void\ reproduce()
+comment4.params=
+comment4.target=int[]\ getNearestActor()
+numComments=5

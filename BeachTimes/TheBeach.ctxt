@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=TheBeach
+comment0.text=\n\ Important\ World\ methods\:\n\ addObject\n\ getObjects\n\ setPaintOrder\n\ showText\n\ \n\ Important\ Greenfoot\ methods\:\n\ stop\n
+comment1.params=
+comment1.target=TheBeach()
+comment2.params=
+comment2.target=void\ act()
+numComments=3

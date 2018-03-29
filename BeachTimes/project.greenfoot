@@ -1,0 +1,22 @@
+#Greenfoot properties
+#Thu Mar 29 13:41:43 ICT 2018
+project.charset=UTF-8
+mainWindow.height=600
+version=3.0.0
+class.Banana.image=balloon2.png
+class.Cherry.superclass=Fruit
+simulation.speed=40
+class.Quicksand.image=rocket.png
+world.lastInstantiated=TheBeach
+mainWindow.y=40
+class.Cherry.image=balloon1.png
+mainWindow.x=40
+class.TheBeach.superclass=greenfoot.World
+class.Starfish.superclass=Animal
+class.Fruit.superclass=greenfoot.Actor
+class.Banana.superclass=Fruit
+mainWindow.width=850
+class.TheBeach.image=space1.jpg
+class.Starfish.image=beeper.png
+class.Animal.superclass=greenfoot.Actor
+class.Quicksand.superclass=Animal
