@@ -3,6 +3,7 @@ import java.util.List;
 
 public class Quicksand extends Animal
 {
+    public int speed = 1;
     public boolean eat(Actor food){
         boolean success = false;
         if(food instanceof Starfish){
@@ -13,6 +14,12 @@ public class Quicksand extends Animal
                 incrementLifeForce();
                 nutrition--;
             }
+            speed += 1;
+        }
+        if(food instanceof Quicksand){
+            for (int i = 0; i < 120; i++) {
+                whither();
+            }
         }
         return success;
     }
@@ -21,7 +28,7 @@ public class Quicksand extends Animal
         if(Math.random() > 0.8){
             turn(30 - (int)(Math.random() * 60));
         }
-        move(getLifeForce() / 4);
+        move(getLifeForce() / speed);
     }
 
     public void reproduce(){

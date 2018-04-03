@@ -14,7 +14,7 @@ public class TheBeach extends World
 {
     public static final int W = 1000;
     public static final int H = 700;
-    public static final int NSTARFISH = 35;
+    public static final int NSTARFISH = 100;
     public TheBeach()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -23,7 +23,7 @@ public class TheBeach extends World
         for(int i = 0; i < NSTARFISH; i++){
             addObject(new Starfish(), (int)(Math.random() * W), (int)(Math.random() * H));
         }
-        for(int i = 0; i < 1; i++){
+        for(int i = 0; i < 4; i++){
             addObject(new Quicksand(), (int)(Math.random() * W), (int)(Math.random() * H));
         }
     }

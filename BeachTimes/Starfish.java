@@ -25,7 +25,7 @@ public class Starfish extends Animal
         if(Math.random() > 0.8){
             turn(30 - (int)(Math.random() * 60));
         }
-        move(getLifeForce() / 6);
+        move(getLifeForce() / 8);
     }
 
     public void reproduce(){
