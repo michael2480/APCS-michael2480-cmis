@@ -26,6 +26,7 @@ public class TheBeach extends World
         for(int i = 0; i < 4; i++){
             addObject(new Quicksand(), (int)(Math.random() * W), (int)(Math.random() * H));
         }
+        addObject(new Player(), 50,50);
     }
 
     public void act(){

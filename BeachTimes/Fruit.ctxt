@@ -1,7 +1,13 @@
 #BlueJ class context
 comment0.target=Fruit
-comment0.text=\n\ Write\ a\ description\ of\ class\ Fruit\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ Fruit\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-numComments=2
+comment1.params=nutrition
+comment1.target=Fruit(int)
+comment2.params=
+comment2.target=int\ getNutrition()
+comment3.params=
+comment3.target=void\ decFreshness()
+comment4.params=
+comment4.target=void\ rot()
+comment5.params=
+comment5.target=void\ act()
+numComments=6

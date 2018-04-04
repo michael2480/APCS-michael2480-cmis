@@ -22,6 +22,10 @@ public abstract class Animal extends Actor
         return lifeForce;
     }
 
+    public void die () {
+        lifeForce = -1;
+    }
+    
     public abstract boolean eat(Actor food);
 
     public abstract void changePosition();

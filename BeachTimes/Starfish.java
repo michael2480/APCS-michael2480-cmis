@@ -18,6 +18,9 @@ public class Starfish extends Animal
             }
             success = true;
         }
+        if(food instanceof Explosion){
+            die();
+        }
         return success;
     }
     

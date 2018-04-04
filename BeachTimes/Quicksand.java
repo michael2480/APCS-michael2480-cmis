@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Quicksand extends Animal
 {
-    public int speed = 1;
+    public int speed = 4;
     public boolean eat(Actor food){
         boolean success = false;
         if(food instanceof Starfish){
@@ -14,12 +14,17 @@ public class Quicksand extends Animal
                 incrementLifeForce();
                 nutrition--;
             }
-            speed += 1;
+            if (speed < 5) {
+                speed += 1;
+            }
         }
         if(food instanceof Quicksand){
-            for (int i = 0; i < 120; i++) {
-                whither();
-            }
+            die();
+            World w = getWorld();
+            w.addObject(new Explosion(), getX(), getY());
+        }
+        if(food instanceof Explosion){
+            die();
         }
         return success;
     }
@@ -52,6 +57,6 @@ public class Quicksand extends Animal
         int closestY = closest.getY();
 
         return new int[] {closestX, closestY};
-        
+
     }
 }
