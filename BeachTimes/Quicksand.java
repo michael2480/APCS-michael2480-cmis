@@ -19,11 +19,20 @@ public class Quicksand extends Animal
             }
         }
         if(food instanceof Quicksand){
-            die();
+            
             World w = getWorld();
             w.addObject(new Explosion(), getX(), getY());
+            die();
         }
         if(food instanceof Explosion){
+            
+            World w = getWorld();
+            w.addObject(new Explosion(), getX(), getY());
+            die();
+        }
+        if(food instanceof Rocket){
+            World w = getWorld();
+            w.addObject(new Explosion(), getX(), getY());
             die();
         }
         return success;

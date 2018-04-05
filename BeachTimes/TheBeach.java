@@ -23,10 +23,14 @@ public class TheBeach extends World
         for(int i = 0; i < NSTARFISH; i++){
             addObject(new Starfish(), (int)(Math.random() * W), (int)(Math.random() * H));
         }
-        for(int i = 0; i < 4; i++){
-            addObject(new Quicksand(), (int)(Math.random() * W), (int)(Math.random() * H));
+        for(int i = 0; i < 2; i++){
+            Quicksand newQ = new Quicksand();
+            newQ.getImage().scale(70,70);
+            addObject( newQ, (int)(Math.random() * W), (int)(Math.random() * H));
         }
-        addObject(new Player(), 50,50);
+        Player p = new Player();
+        p.getImage().scale(70,70);
+        addObject(p, 50,50);
     }
 
     public void act(){
