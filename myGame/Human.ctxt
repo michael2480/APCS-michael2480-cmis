@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Human
+comment1.params=walkSpeed\ hitPoints
+comment1.target=Human(int,\ int)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=int\ getSpeed()
+comment4.params=a
+comment4.target=void\ setSpeed(int)
+comment5.params=
+comment5.target=int\ getHitPoints()
+comment6.params=a
+comment6.target=void\ addHitPoints(int)
+comment7.params=a
+comment7.target=void\ loseHitPoints(int)
+numComments=8
