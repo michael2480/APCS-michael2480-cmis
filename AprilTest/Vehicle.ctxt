@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=Vehicle
+comment0.text=\n\ Instance\ Methods\n\ \=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\n\ Both\ of\ these\ methods\ should\ be\ callable\ by\ subclasses\ of\ Vehicle\n\ \#1\ breakThisVehicle\ -\ change\ isBroken\ to\ true\n\ \#2\ getBrokenStatus\ -\ return\ the\ value\ of\ isBroken\n
+comment1.params=id\ maxSpeed
+comment1.target=Vehicle(int,\ double)
+comment2.params=
+comment2.target=void\ breakThisVehicle()
+comment3.params=
+comment3.target=boolean\ getBrokenStatus()
+comment4.params=
+comment4.target=double\ getMaxSpeed()
+comment5.params=
+comment5.target=double\ getCurrentSpeed()
+comment6.params=speed
+comment6.target=void\ setCurrentSpeed(double)
+comment7.params=speed
+comment7.target=void\ setCurrentSpeedRestricted(double)
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

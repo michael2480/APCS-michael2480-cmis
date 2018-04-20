@@ -21,6 +21,8 @@ public class Enemy extends Human
     public void act() 
     {
         
+        /*
+        
         // Face direction;
         //turn((int)(10-Math.random()*20));
         
@@ -34,6 +36,7 @@ public class Enemy extends Human
         else if (getX() == 0 || getX() == 948 || getY() == 0 || getY() == 698) {
             getWorld().removeObject(this);
         }
+        */
     }    
     
     public updateTargetCoordinates () {}
