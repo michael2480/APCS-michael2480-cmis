@@ -8,10 +8,10 @@ public class Enemy extends Human
     private String shootKey;
 
     public Enemy (int walkSpeed, int hitPoints) {
-        
+
         // Set up instance vars
         super(walkSpeed, hitPoints);
-        
+
         //Resize Image
         GreenfootImage image = getImage();
         image.scale(70,70);
@@ -20,24 +20,35 @@ public class Enemy extends Human
 
     public void act() 
     {
-        
-        /*
-        
-        // Face direction;
-        //turn((int)(10-Math.random()*20));
-        
+
+        /*if (getRotation() > updateTargetCoordinates()) {
+        turn(-10);
+        }
+        else if (getRotation() < updateTargetCoordinates()) {
+        turn(10);
+        }*/
+
+        turnTowards(((MyWorld)getWorld()).getPlayerX(),((MyWorld)getWorld()).getPlayerY());
+
         //Move
-        move(getSpeed());
-        
+        move(4);
+
         if (getOneIntersectingObject(Bullet.class) != null) {
             getWorld().removeObject(this);
         }
-        
+
         else if (getX() == 0 || getX() == 948 || getY() == 0 || getY() == 698) {
             getWorld().removeObject(this);
         }
-        */
+
     }    
-    
-    public updateTargetCoordinates () {}
+
+    public int updateTargetCoordinates () {
+        int x = ((MyWorld)getWorld()).getPlayerX();
+        int y = ((MyWorld)getWorld()).getPlayerY();
+        double dx = x - getX();
+        double dy = y - getY();
+        double angle = Math.atan2(dy,dx)*180.0/Math.PI;
+        return( (int)angle );
+    }
 }

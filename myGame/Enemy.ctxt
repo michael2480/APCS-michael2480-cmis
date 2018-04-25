@@ -4,4 +4,6 @@ comment1.params=walkSpeed\ hitPoints
 comment1.target=Enemy(int,\ int)
 comment2.params=
 comment2.target=void\ act()
-numComments=3
+comment3.params=
+comment3.target=int\ updateTargetCoordinates()
+numComments=4

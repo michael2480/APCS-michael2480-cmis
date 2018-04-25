@@ -2,5 +2,10 @@
 comment0.target=MyWorld
 comment1.params=
 comment1.target=MyWorld()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\n\ \n
-numComments=2
+comment2.params=
+comment2.target=int\ getPlayerX()
+comment3.params=
+comment3.target=int\ getPlayerY()
+comment4.params=
+comment4.target=int\ getAmmo()
+numComments=5
