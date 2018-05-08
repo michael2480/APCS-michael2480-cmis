@@ -1,17 +1,21 @@
 #Greenfoot properties
-#Mon May 07 09:39:39 ICT 2018
-class.Wall.image=Wall.jpg
-class.MyWorld.image=weave.jpg
-mainWindow.width=850
-class.FogWar.superclass=greenfoot.Actor
-class.MyWorld.superclass=greenfoot.World
+#Tue May 08 11:28:50 ICT 2018
 project.charset=UTF-8
-version=3.0.0
-class.Player.superclass=greenfoot.Actor
-class.FogWar.image=Untitled.png
-world.lastInstantiated=MyWorld
-mainWindow.y=40
-class.Player.image=p.gif
-mainWindow.x=40
-class.Wall.superclass=greenfoot.Actor
 mainWindow.height=600
+class.Bullet.image=3a614d3de6da60a.png
+version=3.0.0
+class.Player.image=p.gif
+class.Wall.superclass=greenfoot.Actor
+class.MyWorld.image=weave.jpg
+class.Wall.image=Wall.jpg
+world.lastInstantiated=MyWorld
+class.MyWorld.superclass=greenfoot.World
+class.Zombie.image=skeleton-attack_0.png
+mainWindow.y=40
+mainWindow.x=40
+class.FogWar.image=Untitled.png
+class.FogWar.superclass=greenfoot.Actor
+mainWindow.width=850
+class.Zombie.superclass=greenfoot.Actor
+class.Bullet.superclass=greenfoot.Actor
+class.Player.superclass=greenfoot.Actor

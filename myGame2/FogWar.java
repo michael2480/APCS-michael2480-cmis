@@ -14,6 +14,7 @@ public class FogWar extends Actor
      */
     public void act() 
     {
-        this.x = X(((MyWorld)getWorld()).getPlayerX());
-    }    
+        turnTowards(((MyWorld)getWorld()).getPlayerX(),((MyWorld)getWorld()).getPlayerY());
+        move(1);
+    }
 }

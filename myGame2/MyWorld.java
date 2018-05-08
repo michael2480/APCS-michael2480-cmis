@@ -39,6 +39,9 @@ public class MyWorld extends World
                 if (Math.random() < 0.12) {
                     addObject(new Wall(), i, j);
                 }
+                else if (Math.random() < 0.1) {
+                    addObject(new Zombie(), i, j);
+                }
             }
         }
     }

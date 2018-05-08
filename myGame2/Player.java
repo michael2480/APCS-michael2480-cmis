@@ -12,12 +12,16 @@ public class Player extends Actor
      * Act - do whatever the Player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Player () {
-        GreenfootImage image = getImage();
-        image.scale(50,50);
-        setImage(image);
-    }
-    
+
+    public int x;
+    public int y;
+
+        public Player () {
+            GreenfootImage image = getImage();
+            image.scale(30,30);
+            setImage(image);
+        }
+
     public int getTheX () {
         return this.getX();
     }
@@ -28,17 +32,24 @@ public class Player extends Actor
 
     public void act() 
     {
-        if (Greenfoot.isKeyDown("w")) {
-            move(2);
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+
+        if (mouse != null) {
+            x = mouse.getX();
+            y = mouse.getY();
+            turnTowards(mouse.getX(), mouse.getY());
+
+            if (Greenfoot.mouseClicked(null)) {
+               getWorld().addObject(new Bullet(getRotation()), getX(), getY());
+
+            }
         }
-        else if (Greenfoot.isKeyDown("s")) {
-            move(-2);
+
+        if (getOneIntersectingObject(Wall.class) != null) {
+
         }
-        if (Greenfoot.isKeyDown("d")) {
-            turn(5);
-        }
-        else if (Greenfoot.isKeyDown("a")) {
-            turn(-5);
+        else {
+            move(1);
         }
     }    
 }
