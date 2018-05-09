@@ -14,7 +14,22 @@ public class FogWar extends Actor
      */
     public void act() 
     {
+        double guess;
+        guess = Math.random();
+        /*if (guess < 0.25) {
+            turn(0);
+        }
+        else if (guess < 0.55) {
+            turn(180);
+        }
+        else if (guess < 0.75) {
+            turn(3);
+        }
+        else {
+            turn(-3);
+        }*/
+        
         turnTowards(((MyWorld)getWorld()).getPlayerX(),((MyWorld)getWorld()).getPlayerY());
-        move(1);
+        move(3);
     }
 }

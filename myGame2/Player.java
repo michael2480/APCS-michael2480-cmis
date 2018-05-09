@@ -16,11 +16,11 @@ public class Player extends Actor
     public int x;
     public int y;
 
-        public Player () {
-            GreenfootImage image = getImage();
-            image.scale(30,30);
-            setImage(image);
-        }
+    public Player () {
+        GreenfootImage image = getImage();
+        image.scale(30,30);
+        setImage(image);
+    }
 
     public int getTheX () {
         return this.getX();
@@ -40,16 +40,26 @@ public class Player extends Actor
             turnTowards(mouse.getX(), mouse.getY());
 
             if (Greenfoot.mouseClicked(null)) {
-               getWorld().addObject(new Bullet(getRotation()), getX(), getY());
+                getWorld().addObject(new Bullet(getRotation()), getX(), getY());
 
             }
         }
-
-        if (getOneIntersectingObject(Wall.class) != null) {
-
-        }
-        else {
+        if (Greenfoot.isKeyDown("1")) {
+            int cX = getX();
+            int cY = getY();
             move(1);
+            if (getOneIntersectingObject(Wall.class) != null) {
+                move(-1);
+            }
         }
+        if (Greenfoot.isKeyDown("2")) {
+            int cX = getX();
+            int cY = getY();
+            move(3);
+            if (getOneIntersectingObject(Wall.class) != null) {
+                move(-3);
+            }
+        }
+
     }    
 }

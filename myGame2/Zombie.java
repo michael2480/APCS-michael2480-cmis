@@ -22,8 +22,16 @@ public class Zombie extends Actor
     public void act() 
     {
         turnTowards(((MyWorld)getWorld()).getPlayerX(),((MyWorld)getWorld()).getPlayerY());
-        if (Math.random() < 0.1) {
+        if (Math.random() < 0.06) {
+            int cX = getX();
+            int cY = getY();
             move(1);
+            if (getOneIntersectingObject(Wall.class) != null) {
+                move(-1);
+            }
+            else {
+                move(1);
+            }
         }
 
         if (getOneIntersectingObject(Bullet.class) != null) {

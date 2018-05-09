@@ -42,7 +42,7 @@ public class Player extends Human
 
         //Reload a bit
         if (charge < 20) {
-            charge += 5;
+            charge += 1;
         }
 
         // Turn
