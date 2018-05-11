@@ -15,7 +15,7 @@ public class Terrain extends Actor
 
     public Terrain () {
         GreenfootImage image = getImage();
-        image.scale(8,8);
+        image.scale(10,10);
         setImage(image);
         setRotation(90);
 
@@ -25,7 +25,7 @@ public class Terrain extends Actor
     {
         Actor objectsBelow = getOneObjectAtOffset(0, 5, Terrain.class);
         if (getY() <= 696 && objectsBelow == null) {
-            move(2);
+            move(1);
         }
     }    
 }
