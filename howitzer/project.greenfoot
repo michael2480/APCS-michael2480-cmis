@@ -1,0 +1,12 @@
+#Greenfoot properties
+#Fri May 11 07:53:03 ICT 2018
+mainWindow.width=850
+class.Terrain.image=2000px-Flag_of_Libya_(1977-2011).svg.png
+class.MyWorld.superclass=greenfoot.World
+class.Terrain.superclass=greenfoot.Actor
+project.charset=UTF-8
+version=3.0.0
+world.lastInstantiated=MyWorld
+mainWindow.y=40
+mainWindow.x=40
+mainWindow.height=600
