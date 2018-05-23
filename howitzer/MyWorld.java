@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    Tank t = new Tank("a","d","w","q","e");
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -41,6 +41,28 @@ public class MyWorld extends World
             }
         }
 
-        addObject(new Tank("a","d","w","q","e"), 100, 100);
+        addObject(t, 100, 100);
+        addObject(new Crosshair(), 100, 100);
+        addObject(new RNG_Tank(), 900,100);
+
     }
+
+    public int getTX() {
+        if ((!getObjects(Tank.class).isEmpty())) {
+            return t.getMyX();
+        }
+        else {
+            return 0;
+        }
+    }
+
+    public int getTY() {
+        if ((!getObjects(Tank.class).isEmpty())) {
+            return t.getMyY();
+        }
+        else {
+            return 0;
+        }
+    }
+    
 }

@@ -14,13 +14,12 @@ public class Rocket extends Actor
         GreenfootImage image = getImage();
         image.scale(30,30);
         setImage(image);
-        setRotation(360);
-        momentum = 10;
+        setRotation(r);
+        momentum = 4;
     }
 
     public void act() 
     {
-
         setLocation(getX(), getY()-momentum);
         move(3);
         if (gravTick == 0) {
@@ -29,6 +28,12 @@ public class Rocket extends Actor
         }
         else {
             gravTick -= 1;
+        }
+
+        
+        if (getOneIntersectingObject(Terrain.class) != null) {
+            getWorld().addObject(new Explosion(20), getX(), getY());
+            getWorld().removeObject(this);
         }
     }    
 }

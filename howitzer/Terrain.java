@@ -13,19 +13,33 @@ public class Terrain extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
 
+    public String mode;
+    
     public Terrain () {
         GreenfootImage image = getImage();
         image.scale(10,10);
         setImage(image);
         setRotation(90);
+        mode = "fall";
 
     }
 
     public void act() 
     {
         Actor objectsBelow = getOneObjectAtOffset(0, 5, Terrain.class);
-        if (getY() <= 696 && objectsBelow == null) {
+        if (mode.equals("fall") && (getY() <= 696 && objectsBelow == null)) {
             move(1);
+        }
+        
+        if (getOneIntersectingObject(Explosion.class) != null) {
+            //getWorld().removeObject(this);
+            setRotation(180 - ((Explosion)(getOneIntersectingObject(Explosion.class))).getR());
+            mode = "flee";
+            
+        }
+        
+        if (mode.equals("flee")) {
+            move(3);
         }
     }    
 }
