@@ -7,7 +7,7 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
-    Player p = new Player(9,100,"A","D","S");
+    Player p = new Player(3,100,"A","D","S");
 
     public MyWorld()
     {    
@@ -22,14 +22,35 @@ public class MyWorld extends World
     }
 
     public int getPlayerX () {
-        return p.getTheX();
+        if ((!getObjects(Player.class).isEmpty())) {
+            return p.getTheX();
+        }
+        else {
+            return 0;
+        }
     }
 
     public int getPlayerY () {
-        return p.getTheY();
+        if ((!getObjects(Player.class).isEmpty())) {
+            return p.getTheY();
+        }
+        else {
+            return 0;
+        }
     }
 
     public int getAmmo() {
-        return p.ammo;
+        if ((!getObjects(Player.class).isEmpty())) {
+            return p.ammo;
+        }
+        else {
+            return 0;
+        }
+    }
+    
+    public void setAmmo(int x) {
+        if ((!getObjects(Player.class).isEmpty())) {
+            p.ammo += x;
+        }
     }
 }

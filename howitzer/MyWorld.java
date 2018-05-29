@@ -9,6 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     Tank t = new Tank("a","d","w","q","e");
+
+    int gamemode = 1;
+
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -43,7 +46,9 @@ public class MyWorld extends World
 
         addObject(t, 100, 100);
         addObject(new Crosshair(), 100, 100);
-        addObject(new RNG_Tank(), 900,100);
+        if (gamemode == 2) {
+            addObject(new RNG_Tank(), 500,100);
+        }
 
     }
 
@@ -64,5 +69,5 @@ public class MyWorld extends World
             return 0;
         }
     }
-    
+
 }

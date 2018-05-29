@@ -89,7 +89,6 @@ public class Tank extends Actor
         if (getOneIntersectingObject(Terrain.class) != null) {
             getWorld().addObject(new Explosion(100), getX(), getY());
             getWorld().removeObject(this);
-            ;
         }
     }
 

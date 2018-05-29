@@ -34,6 +34,7 @@ public class Enemy extends Human
         move(4);
 
         if (getOneIntersectingObject(Bullet.class) != null) {
+            ((MyWorld)getWorld()).setAmmo(3);
             getWorld().removeObject(this);
         }
 

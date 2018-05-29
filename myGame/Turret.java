@@ -3,6 +3,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Turret extends Actor
 {
     public int counter;
+    
+    public Turret () {
+        GreenfootImage image = getImage();
+        image.scale(70,70);
+        setImage(image);
+    }
 
     public void act() 
     {

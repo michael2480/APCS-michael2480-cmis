@@ -8,4 +8,6 @@ comment3.params=
 comment3.target=int\ getPlayerY()
 comment4.params=
 comment4.target=int\ getAmmo()
-numComments=5
+comment5.params=x
+comment5.target=void\ setAmmo(int)
+numComments=6
