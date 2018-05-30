@@ -21,13 +21,6 @@ public class Enemy extends Human
     public void act() 
     {
 
-        /*if (getRotation() > updateTargetCoordinates()) {
-        turn(-10);
-        }
-        else if (getRotation() < updateTargetCoordinates()) {
-        turn(10);
-        }*/
-
         turnTowards(((MyWorld)getWorld()).getPlayerX(),((MyWorld)getWorld()).getPlayerY());
 
         //Move

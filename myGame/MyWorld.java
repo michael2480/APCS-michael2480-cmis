@@ -16,9 +16,6 @@ public class MyWorld extends World
         addObject(new Turret(),600,600);
         addObject(p,100,100);
         addObject(new DumbRocketSpawner(),100,100);
-        //addObject(new Player(9,100,"left","right","down"),750,600);
-
-        //addObject(new Enemy(4,100),100,100);
     }
 
     public int getPlayerX () {

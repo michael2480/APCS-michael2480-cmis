@@ -1,11 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.*;
 
 public class DumbRocketSpawner extends Actor
 {
 
 
     public DumbRocketSpawner () {
-
     }
 
     public void act() 
